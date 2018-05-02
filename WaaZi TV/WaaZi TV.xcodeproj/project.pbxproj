@@ -29,6 +29,7 @@
 		E995A442209A3A81000EB94A /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A43A209A3A80000EB94A /* ResponseProtocol.swift */; };
 		E995A443209A3A81000EB94A /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A43B209A3A80000EB94A /* Operations.swift */; };
 		E995A444209A3A81000EB94A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A43C209A3A81000EB94A /* Request.swift */; };
+		E995A44A209A3E19000EB94A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A449209A3E19000EB94A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		E995A43A209A3A80000EB94A /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
 		E995A43B209A3A80000EB94A /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
 		E995A43C209A3A81000EB94A /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		E995A449209A3E19000EB94A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E995A469209A45F4000EB94A /* WaaZi TV copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WaaZi TV copy-Info.plist"; path = "/Users/Akhil/Desktop/Anshad/WaaZiTV_iOS/WaaZi TV/WaaZi TV copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,7 @@
 				E995A3ED209A25BE000EB94A /* Products */,
 				36611DE4996BFF82330C4C43 /* Pods */,
 				78A73103CAB26089F851C712 /* Frameworks */,
+				E995A469209A45F4000EB94A /* WaaZi TV copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,6 +165,7 @@
 		E995A3EE209A25BE000EB94A /* WaaZi TV */ = {
 			isa = PBXGroup;
 			children = (
+				E995A448209A3E03000EB94A /* Constants */,
 				E995A428209A29D2000EB94A /* Networking */,
 				E995A421209A28C0000EB94A /* App Delegate */,
 				E995A420209A28B5000EB94A /* Utils */,
@@ -319,6 +324,14 @@
 				E995A431209A37D1000EB94A /* Common.swift */,
 			);
 			path = "Network Utils";
+			sourceTree = "<group>";
+		};
+		E995A448209A3E03000EB94A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E995A449209A3E19000EB94A /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -625,6 +638,7 @@
 				E995A427209A29A8000EB94A /* LoginVC.swift in Sources */,
 				E995A443209A3A81000EB94A /* Operations.swift in Sources */,
 				E995A42C209A330D000EB94A /* EndPoints.swift in Sources */,
+				E995A44A209A3E19000EB94A /* Constants.swift in Sources */,
 				E995A432209A37D1000EB94A /* Common.swift in Sources */,
 				E995A441209A3A81000EB94A /* OperationProtocol.swift in Sources */,
 				E995A442209A3A81000EB94A /* ResponseProtocol.swift in Sources */,
