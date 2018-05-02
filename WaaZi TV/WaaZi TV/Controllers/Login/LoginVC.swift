@@ -9,14 +9,14 @@
 import UIKit
 
 class LoginVC: BaseVC {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
 }
+
+

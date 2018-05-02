@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17534C6B45718452F18F8979 /* Pods_WaaZi_TVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CAF77A4A34019DE52141D04 /* Pods_WaaZi_TVTests.framework */; };
+		BA9FDE93C492A1E8848726AC /* Pods_WaaZi_TV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B0A56663AFD1DF0B2FDE60 /* Pods_WaaZi_TV.framework */; };
+		E391388EC92B75C369AEA0B8 /* Pods_WaaZi_TVUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E6EAACA56220F89A221F74 /* Pods_WaaZi_TVUITests.framework */; };
 		E995A3F0209A25BE000EB94A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A3EF209A25BE000EB94A /* AppDelegate.swift */; };
 		E995A3F5209A25BE000EB94A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E995A3F3209A25BE000EB94A /* Main.storyboard */; };
 		E995A3F7209A25BE000EB94A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E995A3F6209A25BE000EB94A /* Assets.xcassets */; };
@@ -15,6 +18,18 @@
 		E995A410209A25BE000EB94A /* WaaZi_TVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A40F209A25BE000EB94A /* WaaZi_TVUITests.swift */; };
 		E995A423209A295B000EB94A /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A422209A295B000EB94A /* BaseVC.swift */; };
 		E995A427209A29A8000EB94A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A426209A29A8000EB94A /* LoginVC.swift */; };
+		E995A42C209A330D000EB94A /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A42B209A330D000EB94A /* EndPoints.swift */; };
+		E995A432209A37D1000EB94A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A431209A37D1000EB94A /* Common.swift */; };
+		E995A434209A3A2A000EB94A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A433209A3A2A000EB94A /* Extensions.swift */; };
+		E995A43D209A3A81000EB94A /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A435209A3A7F000EB94A /* RequestProtocol.swift */; };
+		E995A43E209A3A81000EB94A /* ServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A436209A3A7F000EB94A /* ServiceConfig.swift */; };
+		E995A43F209A3A81000EB94A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A437209A3A7F000EB94A /* Service.swift */; };
+		E995A440209A3A81000EB94A /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A438209A3A80000EB94A /* ServiceProtocol.swift */; };
+		E995A441209A3A81000EB94A /* OperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A439209A3A80000EB94A /* OperationProtocol.swift */; };
+		E995A442209A3A81000EB94A /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A43A209A3A80000EB94A /* ResponseProtocol.swift */; };
+		E995A443209A3A81000EB94A /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A43B209A3A80000EB94A /* Operations.swift */; };
+		E995A444209A3A81000EB94A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A43C209A3A81000EB94A /* Request.swift */; };
+		E995A44A209A3E19000EB94A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A449209A3E19000EB94A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +50,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25B7E623D00DEF7B918E6B85 /* Pods-WaaZi TVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaaZi TVTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaaZi TVTests/Pods-WaaZi TVTests.release.xcconfig"; sourceTree = "<group>"; };
+		2D38BED75836A4D4E7A72B86 /* Pods-WaaZi TVUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaaZi TVUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaaZi TVUITests/Pods-WaaZi TVUITests.release.xcconfig"; sourceTree = "<group>"; };
+		38C4434D591B3C442A371DB2 /* Pods-WaaZi TV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaaZi TV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WaaZi TV/Pods-WaaZi TV.debug.xcconfig"; sourceTree = "<group>"; };
+		3CAF77A4A34019DE52141D04 /* Pods_WaaZi_TVTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaaZi_TVTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89B0A56663AFD1DF0B2FDE60 /* Pods_WaaZi_TV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaaZi_TV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D105F4D654251D7EB45EF427 /* Pods-WaaZi TV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaaZi TV.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaaZi TV/Pods-WaaZi TV.release.xcconfig"; sourceTree = "<group>"; };
+		D8E6EAACA56220F89A221F74 /* Pods_WaaZi_TVUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaaZi_TVUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA2CFBDFD45A8C67A87980C8 /* Pods-WaaZi TVUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaaZi TVUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WaaZi TVUITests/Pods-WaaZi TVUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E8606A74E59D15A82FB3F226 /* Pods-WaaZi TVTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaaZi TVTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WaaZi TVTests/Pods-WaaZi TVTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E995A3EC209A25BE000EB94A /* WaaZi TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WaaZi TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E995A3EF209A25BE000EB94A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E995A3F4209A25BE000EB94A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +73,19 @@
 		E995A411209A25BE000EB94A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E995A422209A295B000EB94A /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		E995A426209A29A8000EB94A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		E995A42B209A330D000EB94A /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		E995A431209A37D1000EB94A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		E995A433209A3A2A000EB94A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E995A435209A3A7F000EB94A /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		E995A436209A3A7F000EB94A /* ServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfig.swift; sourceTree = "<group>"; };
+		E995A437209A3A7F000EB94A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E995A438209A3A80000EB94A /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		E995A439209A3A80000EB94A /* OperationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationProtocol.swift; sourceTree = "<group>"; };
+		E995A43A209A3A80000EB94A /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
+		E995A43B209A3A80000EB94A /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
+		E995A43C209A3A81000EB94A /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		E995A449209A3E19000EB94A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E995A469209A45F4000EB94A /* WaaZi TV copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WaaZi TV copy-Info.plist"; path = "/Users/Akhil/Desktop/Anshad/WaaZiTV_iOS/WaaZi TV/WaaZi TV copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA9FDE93C492A1E8848726AC /* Pods_WaaZi_TV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17534C6B45718452F18F8979 /* Pods_WaaZi_TVTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +109,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E391388EC92B75C369AEA0B8 /* Pods_WaaZi_TVUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36611DE4996BFF82330C4C43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38C4434D591B3C442A371DB2 /* Pods-WaaZi TV.debug.xcconfig */,
+				D105F4D654251D7EB45EF427 /* Pods-WaaZi TV.release.xcconfig */,
+				E8606A74E59D15A82FB3F226 /* Pods-WaaZi TVTests.debug.xcconfig */,
+				25B7E623D00DEF7B918E6B85 /* Pods-WaaZi TVTests.release.xcconfig */,
+				DA2CFBDFD45A8C67A87980C8 /* Pods-WaaZi TVUITests.debug.xcconfig */,
+				2D38BED75836A4D4E7A72B86 /* Pods-WaaZi TVUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		78A73103CAB26089F851C712 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89B0A56663AFD1DF0B2FDE60 /* Pods_WaaZi_TV.framework */,
+				3CAF77A4A34019DE52141D04 /* Pods_WaaZi_TVTests.framework */,
+				D8E6EAACA56220F89A221F74 /* Pods_WaaZi_TVUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E995A3E3209A25BE000EB94A = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +146,9 @@
 				E995A403209A25BE000EB94A /* WaaZi TVTests */,
 				E995A40E209A25BE000EB94A /* WaaZi TVUITests */,
 				E995A3ED209A25BE000EB94A /* Products */,
+				36611DE4996BFF82330C4C43 /* Pods */,
+				78A73103CAB26089F851C712 /* Frameworks */,
+				E995A469209A45F4000EB94A /* WaaZi TV copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +165,7 @@
 		E995A3EE209A25BE000EB94A /* WaaZi TV */ = {
 			isa = PBXGroup;
 			children = (
+				E995A448209A3E03000EB94A /* Constants */,
 				E995A428209A29D2000EB94A /* Networking */,
 				E995A421209A28C0000EB94A /* App Delegate */,
 				E995A420209A28B5000EB94A /* Utils */,
@@ -188,8 +255,83 @@
 		E995A428209A29D2000EB94A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E995A446209A3BF2000EB94A /* Network Utils */,
+				E995A445209A3B16000EB94A /* Operations */,
+				E995A430209A36BE000EB94A /* Response */,
+				E995A42F209A36B4000EB94A /* Request */,
+				E995A42E209A36A6000EB94A /* Configurations */,
+				E995A42D209A369A000EB94A /* Service */,
+				E995A42A209A32E3000EB94A /* EndPoints */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		E995A42A209A32E3000EB94A /* EndPoints */ = {
+			isa = PBXGroup;
+			children = (
+				E995A42B209A330D000EB94A /* EndPoints.swift */,
+			);
+			path = EndPoints;
+			sourceTree = "<group>";
+		};
+		E995A42D209A369A000EB94A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E995A438209A3A80000EB94A /* ServiceProtocol.swift */,
+				E995A436209A3A7F000EB94A /* ServiceConfig.swift */,
+				E995A437209A3A7F000EB94A /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E995A42E209A36A6000EB94A /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		E995A42F209A36B4000EB94A /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				E995A435209A3A7F000EB94A /* RequestProtocol.swift */,
+				E995A43C209A3A81000EB94A /* Request.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		E995A430209A36BE000EB94A /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				E995A43A209A3A80000EB94A /* ResponseProtocol.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		E995A445209A3B16000EB94A /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E995A43B209A3A80000EB94A /* Operations.swift */,
+				E995A439209A3A80000EB94A /* OperationProtocol.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		E995A446209A3BF2000EB94A /* Network Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E995A433209A3A2A000EB94A /* Extensions.swift */,
+				E995A431209A37D1000EB94A /* Common.swift */,
+			);
+			path = "Network Utils";
+			sourceTree = "<group>";
+		};
+		E995A448209A3E03000EB94A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E995A449209A3E19000EB94A /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +341,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E995A414209A25BE000EB94A /* Build configuration list for PBXNativeTarget "WaaZi TV" */;
 			buildPhases = (
+				DDB2456A750BE2BF6AC39E7F /* [CP] Check Pods Manifest.lock */,
 				E995A3E8209A25BE000EB94A /* Sources */,
 				E995A3E9209A25BE000EB94A /* Frameworks */,
 				E995A3EA209A25BE000EB94A /* Resources */,
+				93223052BD5949AC4D0CC77C /* [CP] Embed Pods Frameworks */,
+				5E38D7575262B44160943D88 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,9 +361,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E995A417209A25BE000EB94A /* Build configuration list for PBXNativeTarget "WaaZi TVTests" */;
 			buildPhases = (
+				C329218D846A51A486314513 /* [CP] Check Pods Manifest.lock */,
 				E995A3FC209A25BE000EB94A /* Sources */,
 				E995A3FD209A25BE000EB94A /* Frameworks */,
 				E995A3FE209A25BE000EB94A /* Resources */,
+				52D31890E66D6AA5D7FA7D90 /* [CP] Embed Pods Frameworks */,
+				0DD90671EF8240E2F9371834 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,9 +382,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E995A41A209A25BE000EB94A /* Build configuration list for PBXNativeTarget "WaaZi TVUITests" */;
 			buildPhases = (
+				6551A3A3C2A9902FACB93B84 /* [CP] Check Pods Manifest.lock */,
 				E995A407209A25BE000EB94A /* Sources */,
 				E995A408209A25BE000EB94A /* Frameworks */,
 				E995A409209A25BE000EB94A /* Resources */,
+				72A739E0385F06C1C47EDD0C /* [CP] Embed Pods Frameworks */,
+				F3ADF18A7D484664BB187A2B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -321,14 +472,182 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0DD90671EF8240E2F9371834 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaaZi TVTests/Pods-WaaZi TVTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52D31890E66D6AA5D7FA7D90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaaZi TVTests/Pods-WaaZi TVTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E38D7575262B44160943D88 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaaZi TV/Pods-WaaZi TV-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6551A3A3C2A9902FACB93B84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaaZi TVUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72A739E0385F06C1C47EDD0C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaaZi TVUITests/Pods-WaaZi TVUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93223052BD5949AC4D0CC77C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WaaZi TV/Pods-WaaZi TV-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hydra.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaaZi TV/Pods-WaaZi TV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C329218D846A51A486314513 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaaZi TVTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDB2456A750BE2BF6AC39E7F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaaZi TV-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3ADF18A7D484664BB187A2B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaaZi TVUITests/Pods-WaaZi TVUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E995A3E8209A25BE000EB94A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E995A423209A295B000EB94A /* BaseVC.swift in Sources */,
+				E995A434209A3A2A000EB94A /* Extensions.swift in Sources */,
 				E995A427209A29A8000EB94A /* LoginVC.swift in Sources */,
+				E995A443209A3A81000EB94A /* Operations.swift in Sources */,
+				E995A42C209A330D000EB94A /* EndPoints.swift in Sources */,
+				E995A44A209A3E19000EB94A /* Constants.swift in Sources */,
+				E995A432209A37D1000EB94A /* Common.swift in Sources */,
+				E995A441209A3A81000EB94A /* OperationProtocol.swift in Sources */,
+				E995A442209A3A81000EB94A /* ResponseProtocol.swift in Sources */,
+				E995A43F209A3A81000EB94A /* Service.swift in Sources */,
+				E995A43E209A3A81000EB94A /* ServiceConfig.swift in Sources */,
 				E995A3F0209A25BE000EB94A /* AppDelegate.swift in Sources */,
+				E995A444209A3A81000EB94A /* Request.swift in Sources */,
+				E995A43D209A3A81000EB94A /* RequestProtocol.swift in Sources */,
+				E995A440209A3A81000EB94A /* ServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +811,7 @@
 		};
 		E995A415209A25BE000EB94A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38C4434D591B3C442A371DB2 /* Pods-WaaZi TV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -509,6 +829,7 @@
 		};
 		E995A416209A25BE000EB94A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D105F4D654251D7EB45EF427 /* Pods-WaaZi TV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -526,6 +847,7 @@
 		};
 		E995A418209A25BE000EB94A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8606A74E59D15A82FB3F226 /* Pods-WaaZi TVTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -542,6 +864,7 @@
 		};
 		E995A419209A25BE000EB94A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25B7E623D00DEF7B918E6B85 /* Pods-WaaZi TVTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -558,6 +881,7 @@
 		};
 		E995A41B209A25BE000EB94A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA2CFBDFD45A8C67A87980C8 /* Pods-WaaZi TVUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -573,6 +897,7 @@
 		};
 		E995A41C209A25BE000EB94A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D38BED75836A4D4E7A72B86 /* Pods-WaaZi TVUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

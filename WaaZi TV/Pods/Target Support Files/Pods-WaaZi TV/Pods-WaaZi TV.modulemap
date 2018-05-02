@@ -1,0 +1,6 @@
+framework module Pods_WaaZi_TV {
+  umbrella header "Pods-WaaZi TV-umbrella.h"
+
+  export *
+  module * { export * }
+}
