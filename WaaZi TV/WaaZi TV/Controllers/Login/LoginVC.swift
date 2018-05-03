@@ -9,6 +9,10 @@
 import UIKit
 
 class LoginVC: BaseVC {
+    @IBOutlet weak var passwordField: WTTextField!
+    
+    @IBOutlet weak var userNameField: WTTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
