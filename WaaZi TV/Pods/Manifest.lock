@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.5.1)
   - HydraAsync (1.1.0)
+  - LGSideMenuController (2.1.1)
   - SDWebImage (4.1.0):
     - SDWebImage/Core (= 4.1.0)
   - SDWebImage/Core (4.1.0)
@@ -9,15 +10,25 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - HydraAsync
+  - LGSideMenuController
   - SDWebImage
   - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - HydraAsync
+    - LGSideMenuController
+    - SDWebImage
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   HydraAsync: b3d6495b55f845e98ec5b07714da2a6750f6c363
+  LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 783bf41218b53465753e20274097dcaf4a565000
+PODFILE CHECKSUM: 0740869a2e5edf68a69962e041d62933d3b58569
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0

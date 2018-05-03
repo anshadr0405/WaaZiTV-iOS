@@ -12,6 +12,7 @@ platform :ios, '10.0'
  pod 'SDWebImage'
  pod 'SwiftyJSON'
  pod 'HydraAsync'
+ pod 'LGSideMenuController'
   target 'WaaZi TVTests' do
     inherit! :search_paths
     # Pods for testing

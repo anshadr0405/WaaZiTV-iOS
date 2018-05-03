@@ -10,7 +10,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var loadingIndicator: UIView? = nil
     var window: UIWindow?
 
 
@@ -41,6 +41,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func showFullScreenLoadingIndicator() {
+        let containerFrame = CGRect(x: 0, y: 0, width: self.window!.frame.size.width, height: self.window!.frame.size.height)
+        let containerView: UIView = UIView(frame: containerFrame)
+        containerView.backgroundColor = UIColor.black.withAlphaComponent(0.25)
 
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        let indicatorWidth: CGFloat = activityIndicator.bounds.size.width
+        let indicatorHeight: CGFloat = activityIndicator.bounds.size.height
+        let indicatorX = (containerFrame.size.width - indicatorWidth) / 2
+        let indicatorY = (containerFrame.size.height - indicatorHeight) / 2
+        
+        let activityFrame = CGRect(x: indicatorX, y: indicatorY, width: indicatorWidth, height: indicatorHeight)
+        activityIndicator.frame = activityFrame
+        activityIndicator.startAnimating()
+        
+        containerView.addSubview(activityIndicator)
+        
+        if self.loadingIndicator != nil {
+            self.loadingIndicator?.removeFromSuperview()
+        }
+        self.window?.addSubview(containerView)
+        
+        self.loadingIndicator = containerView
+    }
+    
+    func hideFullScreenLoadingIndicator() {
+        if self.loadingIndicator != nil {
+            self.loadingIndicator?.removeFromSuperview()
+            self.loadingIndicator = nil
+        }
+    }
 }
 
