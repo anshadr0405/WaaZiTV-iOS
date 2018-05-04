@@ -9,7 +9,7 @@
 import UIKit
 
 class BaseVC: UIViewController {
-
+    let validator = Validator()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,4 +19,9 @@ class BaseVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func navigate(identifier:String) {
+     let destinationVC:BaseVC = self.storyboard?.instantiateViewController(withIdentifier: identifier) as! BaseVC
+            self.navigationController?.pushViewController(destinationVC, animated: true)
+
+    }
 }

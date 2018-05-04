@@ -1,0 +1,46 @@
+{
+    "slide_menu": [
+                   {
+                   "id": 0,
+                   "title": "Home",
+                   "destination_id": "MainTabBarVC",
+                   "image": "home_icon"
+                   },
+                   {
+                   "id": 1,
+                   "title": "Client Information",
+                   "destination_id": "ClientInfoVC",
+                   "image": "clientinfo_icon"
+                   },
+                   {
+                   "id": 2,
+                   "title": "About",
+                   "destination_id": "ClientInfoVC",
+                   "image": "about_icon"
+                   },
+                   {
+                   "id": 3,
+                   "title": "Support",
+                   "destination_id": "ClientInfoVC",
+                   "image": "support_icon"
+                   },
+                   {
+                   "id": 4,
+                   "title": "Share",
+                   "destination_id": "ClientInfoVC",
+                   "image": "share_icon"
+                   },
+                   {
+                   "id": 5,
+                   "title": "Check Update",
+                   "destination_id": "ClientInfoVC",
+                   "image": "checkupdate_icon"
+                   },
+                   {
+                   "id": 6,
+                   "title": "Logout",
+                   "destination_id": "ClientInfoVC",
+                   "image": "logout_icon"
+                   }
+                   ]
+}
