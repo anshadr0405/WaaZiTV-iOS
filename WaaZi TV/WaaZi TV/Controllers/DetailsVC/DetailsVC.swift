@@ -15,31 +15,44 @@ class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICo
     @IBOutlet weak var searchBar: UISearchBar!
     var player:AVPlayer?
     var playerItem:AVPlayerItem?
+    var playerLayer: AVPlayerLayer?
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.addPlayer()
 
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupCollectionView()
+        self.addPlayer()
+
         // Do any additional setup after loading the view.
     }
 
     func addPlayer() {
-        let url = URL(string: "https://s3.amazonaws.com/kargopolov/kukushka.mp3")
-        let playerItem:AVPlayerItem = AVPlayerItem(url: url!)
+        
+         let moviePath = Bundle.main.path(forResource: "video", ofType: "mov")
+        
+        let movieURL = URL(fileURLWithPath: moviePath!)
+       
+        playerItem = AVPlayerItem(url: movieURL)
         player = AVPlayer(playerItem: playerItem)
         
-        let playerLayer: AVPlayerLayer = AVPlayerLayer(player: player)
-        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill;
-        playerLayer.frame = CGRect(x: 0, y: 0, width: self.playerContainerView.frame.size.width, height: self.playerContainerView.frame.size.height)
-         self.playerContainerView.layer.addSublayer(playerLayer)
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill;
+        playerLayer?.frame = CGRect(x: 0, y: 0, width: self.playerContainerView.frame.size.width, height: self.playerContainerView.frame.size.height)
         player?.play()
+
        
 
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        playerLayer?.frame = CGRect(x: 0, y: 0, width: self.playerContainerView.frame.size.width, height: self.playerContainerView.frame.size.height)
+        self.playerContainerView.layer.addSublayer(playerLayer!)
+        self.playerContainerView.layoutSubviews()
+        self.view.layoutIfNeeded()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
