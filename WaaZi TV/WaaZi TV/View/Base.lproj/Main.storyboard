@@ -315,7 +315,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwS-Zh-ntw">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwS-Zh-ntw" customClass="VideoPlayerView" customModule="WaaZi_TV" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -381,8 +381,8 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="pit-Vd-CQW" id="FqY-wR-Plq"/>
-                        <outlet property="playerContainerView" destination="bwS-Zh-ntw" id="ggO-8w-E08"/>
                         <outlet property="searchBar" destination="t9h-pG-OSE" id="baQ-d8-4Dh"/>
+                        <outlet property="videoPlayerView" destination="bwS-Zh-ntw" id="9mr-2k-PrY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yrJ-4j-xFe" userLabel="First Responder" sceneMemberID="firstResponder"/>

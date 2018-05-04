@@ -10,12 +10,11 @@ import UIKit
 import AVKit
 class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet weak var playerContainerView: UIView!
+  
+    @IBOutlet weak var videoPlayerView: VideoPlayerView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
-    var player:AVPlayer?
-    var playerItem:AVPlayerItem?
-    var playerLayer: AVPlayerLayer?
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -23,34 +22,18 @@ class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupCollectionView()
-        self.addPlayer()
 
         // Do any additional setup after loading the view.
     }
-
-    func addPlayer() {
+    func setupViews(){
+//        videoPlayerView.setVideo(<#T##videoUrl: URL##URL#>)
         
-         let moviePath = Bundle.main.path(forResource: "video", ofType: "mov")
-        
-        let movieURL = URL(fileURLWithPath: moviePath!)
-       
-        playerItem = AVPlayerItem(url: movieURL)
-        player = AVPlayer(playerItem: playerItem)
-        
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill;
-        playerLayer?.frame = CGRect(x: 0, y: 0, width: self.playerContainerView.frame.size.width, height: self.playerContainerView.frame.size.height)
-        player?.play()
-
-       
-
     }
+   
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        playerLayer?.frame = CGRect(x: 0, y: 0, width: self.playerContainerView.frame.size.width, height: self.playerContainerView.frame.size.height)
-        self.playerContainerView.layer.addSublayer(playerLayer!)
-        self.playerContainerView.layoutSubviews()
+        
         self.view.layoutIfNeeded()
     }
     override func didReceiveMemoryWarning() {

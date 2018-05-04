@@ -5,13 +5,6 @@ import AVFoundation
 
 class VideoPlayerView: UIView {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     typealias PlayerStatusCallback = (_ status: String) -> Void
 
@@ -24,7 +17,7 @@ class VideoPlayerView: UIView {
     var paused = false
     var secondPlayer: Bool!{
         didSet {
-//                SFUtility.printToConsole(message: "secondPlayerValue: " + secondPlayer.description)
+
         }
     }
     required init?(coder aDecoder: NSCoder) {
@@ -77,9 +70,7 @@ class VideoPlayerView: UIView {
     func setVideo(_ videoUrl: URL) {
         videoPlayer?.pause()
         videoPlayer?.replaceCurrentItem(with: AVPlayerItem(url: videoUrl))
-   
-        // Set player status callbacks
-        addPlaybackStatusCallbacks()
+           addPlaybackStatusCallbacks()
     }
     
     func addPlaybackStatusCallbacks() {
