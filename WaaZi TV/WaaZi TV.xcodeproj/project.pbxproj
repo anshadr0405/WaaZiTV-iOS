@@ -46,6 +46,7 @@
 		E92BA0A1209B53500009AAD7 /* LeftMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92BA0A0209B53500009AAD7 /* LeftMenuController.swift */; };
 		E92BA0A3209B614D0009AAD7 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92BA0A2209B614D0009AAD7 /* MenuModel.swift */; };
 		E92BA0A5209B66F30009AAD7 /* slide_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = E92BA0A4209B643C0009AAD7 /* slide_menu.json */; };
+		E95EC7E0209CD561001112A1 /* VideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95EC7DF209CD561001112A1 /* VideoPlayerView.xib */; };
 		E995A3F0209A25BE000EB94A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A3EF209A25BE000EB94A /* AppDelegate.swift */; };
 		E995A3F5209A25BE000EB94A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E995A3F3209A25BE000EB94A /* Main.storyboard */; };
 		E995A3F7209A25BE000EB94A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E995A3F6209A25BE000EB94A /* Assets.xcassets */; };
@@ -133,6 +134,7 @@
 		E92BA0A0209B53500009AAD7 /* LeftMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuController.swift; sourceTree = "<group>"; };
 		E92BA0A2209B614D0009AAD7 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		E92BA0A4209B643C0009AAD7 /* slide_menu.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = slide_menu.json; sourceTree = "<group>"; };
+		E95EC7DF209CD561001112A1 /* VideoPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayerView.xib; sourceTree = "<group>"; };
 		E995A3EC209A25BE000EB94A /* WaaZi TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WaaZi TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E995A3EF209A25BE000EB94A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E995A3F4209A25BE000EB94A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -242,7 +244,7 @@
 		E92BA061209B48360009AAD7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				6C1DDBAB209C8DA9008F41D7 /* VideoPlayerView.swift */,
+				E95EC7DE209CD4CD001112A1 /* CustomPlayer */,
 				6CC09D5C209C3CD5000671B1 /* CollectionViewCell */,
 				E92BA062209B487E0009AAD7 /* WTTextField.swift */,
 			);
@@ -321,6 +323,15 @@
 				E9C108D9209B7BBC005A6FF2 /* NavigationController.swift */,
 			);
 			path = SlideMenu;
+			sourceTree = "<group>";
+		};
+		E95EC7DE209CD4CD001112A1 /* CustomPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				6C1DDBAB209C8DA9008F41D7 /* VideoPlayerView.swift */,
+				E95EC7DF209CD561001112A1 /* VideoPlayerView.xib */,
+			);
+			path = CustomPlayer;
 			sourceTree = "<group>";
 		};
 		E995A3E3209A25BE000EB94A = {
@@ -639,6 +650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E92BA0A5209B66F30009AAD7 /* slide_menu.json in Resources */,
+				E95EC7E0209CD561001112A1 /* VideoPlayerView.xib in Resources */,
 				E995A3FA209A25BE000EB94A /* LaunchScreen.storyboard in Resources */,
 				E995A3F7209A25BE000EB94A /* Assets.xcassets in Resources */,
 				E995A3F5209A25BE000EB94A /* Main.storyboard in Resources */,

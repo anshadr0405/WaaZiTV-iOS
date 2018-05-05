@@ -3,8 +3,10 @@
 import UIKit
 import AVFoundation
 
-class VideoPlayerView: UIView {
+class VideoPlayerView: NibView {
 
+    @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var toolBarView: UIView!
     
     typealias PlayerStatusCallback = (_ status: String) -> Void
 
@@ -23,34 +25,39 @@ class VideoPlayerView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initialize()
+
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
+
+    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        initialize()
+
     }
     
+    
     func initialize() {
-     
+         Bundle.main.loadNibNamed("VideoPlayerView", owner: self, options:nil)
 
         videoPlayer = AVPlayer()
         videoPlayer?.actionAtItemEnd = .pause
-        
         videoPlayerLayer = AVPlayerLayer(player: videoPlayer)
-        videoPlayerLayer.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+        videoPlayerLayer.frame = CGRect(x: 0, y: 0, width: self.playerView.frame.size.width, height: self.playerView.frame.size.height)
         videoPlayerLayer.videoGravity = .resizeAspectFill
         self.layer.addSublayer(videoPlayerLayer!)
-        
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
         gestureRecognizer.numberOfTapsRequired = 1
-        
         self.addGestureRecognizer(gestureRecognizer)
     }
     
         
     override func layoutSubviews() {
          super.layoutSubviews()
-        videoPlayerLayer.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+         videoPlayerLayer.frame = CGRect(x: 0, y: 0, width: self.playerView.frame.size.width, height: self.playerView.frame.size.height)
         
     }
     

@@ -10,11 +10,11 @@ import UIKit
 import AVKit
 class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
-  
-    @IBOutlet weak var videoPlayerView: VideoPlayerView!
+    @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
-   
+    var videoPlayerView:VideoPlayerView?
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -22,11 +22,16 @@ class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupCollectionView()
+        setupViews()
 
         // Do any additional setup after loading the view.
     }
     func setupViews(){
-//        videoPlayerView.setVideo(<#T##videoUrl: URL##URL#>)
+       videoPlayerView = VideoPlayerView.init(frame: self.playerView.frame)
+        self.playerView.addSubview(videoPlayerView!)
+        let url:URL = URL.init(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4")!
+        videoPlayerView?.setVideo(url)
+        videoPlayerView?.play()
         
     }
    
