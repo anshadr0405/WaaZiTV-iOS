@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -153,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0PC-tc-5Bp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="233.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="JZa-Yo-nO4">
                                         <rect key="frame" x="142.5" y="43" width="90" height="60"/>
@@ -163,13 +164,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22y-FW-lcx">
-                                        <rect key="frame" x="172.5" y="118" width="29.5" height="21"/>
+                                        <rect key="frame" x="173" y="118" width="29.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u41-zD-dZz">
-                                        <rect key="frame" x="125.5" y="147" width="123" height="21"/>
+                                        <rect key="frame" x="126" y="147" width="123" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -177,6 +178,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="7sb-5C-13L"/>
                                     <constraint firstItem="JZa-Yo-nO4" firstAttribute="centerX" secondItem="0PC-tc-5Bp" secondAttribute="centerX" id="B1b-7E-iib"/>
                                     <constraint firstItem="22y-FW-lcx" firstAttribute="top" secondItem="JZa-Yo-nO4" secondAttribute="bottom" constant="15" id="GE6-we-lZg"/>
                                     <constraint firstItem="u41-zD-dZz" firstAttribute="centerX" secondItem="0PC-tc-5Bp" secondAttribute="centerX" id="MSm-3h-p4u"/>
@@ -186,7 +188,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sbB-PU-JbS">
-                                <rect key="frame" x="0.0" y="233.5" width="375" height="433.5"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -204,7 +206,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="logo" id="lal-dT-6ql">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="imageView:lal-dT-6ql:image" id="lal-dT-6ql">
                                                     <rect key="frame" x="15" y="0.0" width="44" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -230,6 +232,11 @@
                             <constraint firstItem="0PC-tc-5Bp" firstAttribute="leading" secondItem="ZcJ-ge-Jzv" secondAttribute="leading" id="y45-XA-5j4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZcJ-ge-Jzv"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KDh-mZ-oIm"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="emailLabel" destination="u41-zD-dZz" id="jGH-zr-Tnr"/>
@@ -240,49 +247,153 @@
             </objects>
             <point key="canvasLocation" x="-1647.2" y="-1678.1109445277364"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="gXQ-iU-XZe">
             <objects>
-                <viewController id="Kcz-j6-uqM" customClass="BaseVC" customModule="WaaZi_TV" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Kcz-j6-uqM" customClass="HomeVC" customModule="WaaZi_TV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wch-cN-z5Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="L8i-iH-8UO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vnT-LV-dL3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cto-dE-29u">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="180" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eew-AO-CCi">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Kcz-j6-uqM" id="FIv-kr-wP2"/>
+                                    <outlet property="delegate" destination="Kcz-j6-uqM" id="sdP-De-Sfp"/>
+                                    <outlet property="prefetchDataSource" destination="Kcz-j6-uqM" id="NN5-PQ-4DR"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zql-t1-ffc" firstAttribute="trailing" secondItem="vnT-LV-dL3" secondAttribute="trailing" id="408-bS-kg3"/>
                             <constraint firstItem="vnT-LV-dL3" firstAttribute="top" secondItem="zql-t1-ffc" secondAttribute="top" id="4jz-c4-14B"/>
+                            <constraint firstItem="L8i-iH-8UO" firstAttribute="trailing" secondItem="zql-t1-ffc" secondAttribute="trailing" id="BsR-rL-tkX"/>
+                            <constraint firstItem="L8i-iH-8UO" firstAttribute="top" secondItem="zql-t1-ffc" secondAttribute="top" id="H5O-Ce-HBs"/>
                             <constraint firstItem="zql-t1-ffc" firstAttribute="bottom" secondItem="vnT-LV-dL3" secondAttribute="bottom" id="LCN-JE-oBq"/>
+                            <constraint firstItem="vnT-LV-dL3" firstAttribute="top" secondItem="L8i-iH-8UO" secondAttribute="bottom" id="MoW-Xq-lHp"/>
                             <constraint firstItem="vnT-LV-dL3" firstAttribute="leading" secondItem="zql-t1-ffc" secondAttribute="leading" id="T8d-pZ-ynI"/>
+                            <constraint firstItem="L8i-iH-8UO" firstAttribute="leading" secondItem="zql-t1-ffc" secondAttribute="leading" id="ZeY-Yk-T4f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zql-t1-ffc"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4jz-c4-14B"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="gky-07-Nhe"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="gky-07-Nhe"/>
+                    <connections>
+                        <outlet property="collectionView" destination="vnT-LV-dL3" id="kgH-bS-gtH"/>
+                        <outlet property="searchBar" destination="L8i-iH-8UO" id="te0-N2-uZf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yeu-rd-aT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-335" y="-1425"/>
+            <point key="canvasLocation" x="-335.19999999999999" y="-1425.3373313343329"/>
+        </scene>
+        <!--DetailsVC-->
+        <scene sceneID="dTt-iu-kWL">
+            <objects>
+                <viewController storyboardIdentifier="DetailsVC" id="bOZ-us-AYF" customClass="DetailsVC" customModule="WaaZi_TV" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Riq-gR-ubY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwS-Zh-ntw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bwS-Zh-ntw" secondAttribute="height" multiplier="16:9" id="WhE-cT-Xe5"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1sG-FQ-gJo">
+                                <rect key="frame" x="0.0" y="211" width="375" height="456"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="t9h-pG-OSE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pit-Vd-CQW">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="400"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hEL-Eh-sZx">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qqq-w3-qA7">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="bOZ-us-AYF" id="ud9-OK-cII"/>
+                                            <outlet property="delegate" destination="bOZ-us-AYF" id="uVs-R8-Rj7"/>
+                                            <outlet property="prefetchDataSource" destination="bOZ-us-AYF" id="OH9-6s-lU4"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="pit-Vd-CQW" firstAttribute="leading" secondItem="1sG-FQ-gJo" secondAttribute="leading" id="0Td-P6-CQx"/>
+                                    <constraint firstAttribute="bottom" secondItem="pit-Vd-CQW" secondAttribute="bottom" id="23I-qn-gre"/>
+                                    <constraint firstAttribute="trailing" secondItem="t9h-pG-OSE" secondAttribute="trailing" id="9cW-vI-hCG"/>
+                                    <constraint firstItem="pit-Vd-CQW" firstAttribute="top" secondItem="t9h-pG-OSE" secondAttribute="bottom" id="Cc6-SR-cQl"/>
+                                    <constraint firstItem="t9h-pG-OSE" firstAttribute="top" secondItem="1sG-FQ-gJo" secondAttribute="top" id="M0t-4g-bLB"/>
+                                    <constraint firstAttribute="trailing" secondItem="pit-Vd-CQW" secondAttribute="trailing" id="q1f-x1-tSk"/>
+                                    <constraint firstItem="t9h-pG-OSE" firstAttribute="leading" secondItem="1sG-FQ-gJo" secondAttribute="leading" id="s3N-CC-UMo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bwS-Zh-ntw" firstAttribute="top" secondItem="Riq-gR-ubY" secondAttribute="top" id="3RU-Zj-ydU"/>
+                            <constraint firstItem="yhF-tx-ATb" firstAttribute="bottom" secondItem="1sG-FQ-gJo" secondAttribute="bottom" id="41S-NO-Hjd"/>
+                            <constraint firstItem="yhF-tx-ATb" firstAttribute="trailing" secondItem="bwS-Zh-ntw" secondAttribute="trailing" id="5jW-Zm-eyc"/>
+                            <constraint firstItem="1sG-FQ-gJo" firstAttribute="top" secondItem="bwS-Zh-ntw" secondAttribute="bottom" id="Gi7-l7-DTI"/>
+                            <constraint firstItem="yhF-tx-ATb" firstAttribute="trailing" secondItem="1sG-FQ-gJo" secondAttribute="trailing" id="T3a-df-M4Y"/>
+                            <constraint firstItem="1sG-FQ-gJo" firstAttribute="leading" secondItem="yhF-tx-ATb" secondAttribute="leading" id="neW-cX-NfL"/>
+                            <constraint firstItem="bwS-Zh-ntw" firstAttribute="leading" secondItem="yhF-tx-ATb" secondAttribute="leading" id="t3P-k8-9Eh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yhF-tx-ATb"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="pit-Vd-CQW" id="FqY-wR-Plq"/>
+                        <outlet property="playerView" destination="bwS-Zh-ntw" id="7cq-UE-GiM"/>
+                        <outlet property="searchBar" destination="t9h-pG-OSE" id="baQ-d8-4Dh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yrJ-4j-xFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-317" y="-636"/>
         </scene>
         <!--BaseVC-->
         <scene sceneID="vKe-pp-NDx">
@@ -358,6 +469,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="krh-lV-Vci"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -480,6 +592,297 @@
     </scenes>
     <resources>
         <image name="MenuIcon" width="21" height="21"/>
+        <image name="imageView:lal-dT-6ql:image" width="60" height="60">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
+GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
+c1dOU0NvbG9ygAKADRIgwAAAgAOAC1h7NjAsIDYwfdIVChYYWk5TLm9iamVjdHOhF4AEgArSFQoaHaIb
+HIAFgAaACRAA0iAKISJfEBROU1RJRkZSZXByZXNlbnRhdGlvboAHgAhPEUDeTU0AKgAAOEj/////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////+fn5////////////////////////////////////////////////
+/////////////v7+///////5+fn/+/v7///////+/v7/////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//////////////////z8/P//////////////////////////////////////////////////////////
+//////////////////r6+v////////////7+/v//////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////Ozs7/fX19/+3t7f//////////////////////////////////////////
+//////////////////7+/v+Tk5P/qKio///////+/v7/////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////9/f3/8nJyf/ERER/0lJSf//////////////////////////////////////////
+///////09PT//////2JiYv8jIyP/ERER/7Ozs///////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////9nZ2f8cHBz/FhYW/zk5Of///////Pz8////////////////////////////////
+///////v7+///////0ZGRv8mJib/EBAQ/6mpqf//////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//////////////////////+mpqb/V1dX/x0dHf+Li4v///////T09P//////////////////////////
+//r6+v//////z8/P/xQUFP9QUFD/g4OD///////8/Pz/////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////6ioqP8JCQn/sbGx///////7+/v/////////////////////
+///////y8vL/BwcH/3t7e/////////////v7+///////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////8/Pz/9vb2//////+goKD/CQkJ/9XV1f//////////////////////////
+//Hx8f8gICD/XV1d///////5+fn/+vr6////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////ZWVl/xkZGf/09PT//////////////////v7+
+/1FRUf8sLCz///////n5+f//////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////29vb//////0FBQf84ODj/wsLC/6ysrP/Ozs7/XFxc
+/yUlJf/y8vL//v7+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////5SUlP8jIyP/Hh4e/x4eHv8gICD/ISEh
+/2dnZ///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////YWFh/wAAAP8WFhb/FhYW/xYWFv8WFhb/FRUV
+/wcHB/8iIiL/8fHx////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//z8/P//////////////////////////////////////39/f/+Dg4P/d3d3/39/f/+Dg4P/g4OD/39/f
+/+Dg4P/f39//9/f3//////////////////////////////////r6+v///////Pz8////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////+/v7
+///////m5ub/hYWF/1paWv9ZWVn/WVlZ/1paWv9bW1v/YGBg/19fX/9hYWH/YGBg/19fX/9fX1//YGBg
+/2BgYP9eXl7/XV1d/1paWv9YWFj/XFxc/1VVVf96enr/xMTE///////39/f/////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/6+vr/8gICD/FxcX/xoaGv8aGhr/Ghoa/xoaGv8aGhr/FxcX/xgYGP8XFxf/FxcX/xcXF/8XFxf/FxcX
+/xgYGP8ZGRn/GBgY/xoaGv8aGhr/Ghoa/xoaGv8WFhb/Ghoa/39/f///////+/v7////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////1tbW
+/xkZGf8qKir/KSkp/ygoKP8rKyv/Kysr/ygoKP8oKCj/LS0t/yoqKv8pKSn/KSkp/ywsLP8sLCz/KSkp
+/ywsLP8sLCz/Kysr/ygoKP8qKir/LCws/ysrK/8qKir/Li4u/xUVFf+Wlpb/////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////7+/v//////c3Nz
+/xkZGf8lJSX/1NTU/9DQ0P8TExP/Nzc3/+rq6v+8vLz/DAwM/01NTf/19fX/o6Oj/wkJCf9gYGD//v7+
+/3t7e/8KCgr/g4OD//z8/P9fX1//BgYG/6Ojo//7+/v/RERE/xYWFv9ERET/+/v7//7+/v//////////
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////8/Pz/PT09
+/xwcHP8aGhr/jo6O/4mJif8RERH/JiYm/5ubm/97e3v/Dw8P/zY2Nv+ioqL/ampq/wkJCf9DQ0P/paWl
+/1JSUv8LCwv/VlZW/6ampv9BQUH/CQkJ/2xsbP+kpKT/Li4u/yAgIP8eHh7/2tra//7+/v/5+fn/+fn5
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////v7+///////5+fn/ODg4
+/yAgIP9HR0f/NTU1/zY2Nv9BQUH/PT09/zY2Nv84ODj/Pz8//z09Pf81NTX/OTk5/0BAQP87Ozv/NTU1
+/zk5Of9BQUH/Ojo6/zU1Nf87Ozv/QUFB/zk5Of82Njb/Ojo6/zk5Of8VFRX/2dnZ//r6+v///////Pz8
+//Hx8f//////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////v7+///////29vb/LCws
+/zk5Of//////+/v7//////////////////////////////////////////////////7+/v//////////
+///////+/v7//////////////////v7+/////////////////4yMjP8MDAz/3Nzc//z8/P/a2tr/Jycn
+/9TU1P//////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////39/f/Li4u
+/zg4OP//////9/f3/////////////////////////P7////8//T68v/o9+r/+/////7////5+fb///7/
+///////+/v////////7+/////////////////////////////4uLi/8KCgr/39/f/56enP8jIyH/FxcW
+/9TU0f//////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////39/f/Li4u
+/zg4OP//////9/f3////////////////////////+P////7//7POoP9SiCj/oLV2//T99P/7/v//+f3x
+//v7/v///////////////////////////////////////////4ODg/8YGBj/SEhI/xAQD/8tLSv/FxcW
+/9XV0///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////39/f/Li4u
+/zg4OP//////9/f3///////////////////////5/fH///7//67Imv9HiSD/Q4Ai/2CPOf+2ypv///r/
+/////////////v7+/////////////////////////////////4SEhP8YGBj/IiIi/zAwLv8wMC7/FhYU
+/9XV0///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////39/f/Li4u
+/zg4OP//////9/f3///////////////////////0/v////z//7nInf9LhCb/U401/1GLLP9Nfyf/Z5dE
+/9nZ1v////z//P36//7++////////////////////////////4GBgf8ZGRn/Li4u/yIiIP8tLSv/FxcW
+/9bW1P//////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////39/f/Li4u
+/zg4OP//////9/f3///////////////////////7+/7///7//7HHmP9Ngx7/UYot/1WNNf9PiTD/TYco
+/4Sydf///v////H2//j/+v///////////////////////////4KCgv8aGhr/Kysr/yMjIv8vLy7/FhYU
+/9XV0///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////39/f/Li4u
+/zg4OP//////9/f3///////////////////////8+/b///z//67Krf9OkC3/TYw4/0h/H/9tkkL/wtSz
+////+v///v////77//7//////////////////////////////4ODg/8YGBj/Li4u/y0tK/8sLCr/FxcW
+/9XV0///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////39/f/Li4u
+/zg4OP//////9/f3///////////////////////7+/v///7//6nFkf89dxL/WIks/6rMk//6//v///r/
+///0//////z//v/////+/////////////////////////////4GBgf8cHBz/IyMj/xQUE/80NDP/FRUT
+/9TU0f//////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////39/f/Li4u
+/zg4OP//////9/f3///////////////////////5/v////z//97n0/+hw5P/7O7k///+///8+///+/73
+//j/+v/+//b///z///v++v///////////////////////////4mJif8NDQ3/w8PD/11dW/8cHBv/HBwa
+/9PT0P//////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////v7+///////39/f/LCws
+/zk5Of//////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////5GRkf8JCQn/29vb//z8/P+QkJD/Dw8P
+/9bW1v//////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////29vb/MzMz
+/yoqKv+SkpL/a2tr/3BwcP+EhIT/gYGB/21tbf9zc3P/hYWF/4CAgP9sbGz/dnZ2/4mJif98fHz/bGxs
+/3h4eP+IiIj/d3d3/2xsbP96enr/iIiI/3V1df9tbW3/g4OD/1lZWf8QEBD/2tra//v7+///////0dHR
+/+Tk5P//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////7+/v/6+vr/Ojo6
+/xwcHP8XFxf/SUlJ/0VFRf8PDw//HBwc/1BQUP9BQUH/CgoK/yAgIP9TU1P/Ozs7/wsLC/8mJib/VlZW
+/y8vL/8ODg7/MDAw/1ZWVv8iIiL/CwsL/zs7O/9UVFT/Gxsb/yAgIP8aGhr/1dXV///////x8fH/////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////WVlZ
+/xwcHP8jIyP/6urq/+Xl5f8SEhL/OTk5///////Pz8//DQ0N/1NTU///////s7Oz/wUFBf9qamr/////
+/4aGhv8KCgr/jIyM//////9paWn/BQUF/7Ozs///////SkpK/xkZGf84ODj/8fHx//z8/P//////////
+//7+/v//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////s7Oz
+/w8PD/8yMjL/QUFB/0FCQP8lJSP/LCwq/0VFQ/8+Pjz/JCQj/y4uLf9GRkT/OTk3/yMjIv8zMzH/SEhG
+/zMzMv8kJCP/NDQz/0lJR/8xMS//IyMh/zo6Of9JSUf/NDQ0/xISEv9xcXH/////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/3h4eP8TExP/EhIS/xYWFf8kJCP/ICAf/xYWFP8XFxb/IyMh/x8fHf8WFhX/GhoY/yUlI/8dHRz/FBQT
+/xoaGf8lJSP/HBwa/xQUE/8dHRz/JSUj/xoaGP8SEhH/ExMT/0FBQf/7+/v/////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////Pz8
+//////+oqKj/TU1N/zQ0M/8sLCr/MDAu/zMzMv8zMzL/LS0r/zAwLv80NDP/MzMx/y0tK/8vLy7/NjY0
+/zExL/8uLiz/MDAu/zc3Nf8xMS//LS0r/zExL/9HR0X/fX19///////8/Pz/////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//7+/v////////////T08f/09PH/9vb0//Ly8P/y8vD/9fXy//T08f/y8vD/8vLw//X18v/29vT/8vLw
+//T08f/29vT/9fXy//T08f/09PH/9vb0//T08f/8/fr///////z8/P//////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//////////////////7+/v/+/v7//v7+//7+/v/+/v7//v7+//7+/v/+/v7//v7+//7+/v/+/v7//v7+
+//7+/v/+/v7//v7+//7+/v/+/v7//v7+//7+/v/+/v7/////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////8ADgEAAAMA
+AAABADwAAAEBAAMAAAABADwAAAECAAMAAAAEAAA49gEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQA
+AAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMAAAABADwAAAEXAAQAAAABAAA4QAEcAAMA
+AAABAAEAAAFSAAMAAAABAAEAAAFTAAMAAAAEAAA4/odzAAcAAAfYAAA5BgAAAAAACAAIAAgACAABAAEA
+AQABAAAH2GFwcGwCIAAAbW50clJHQiBYWVogB9kAAgAZAAsAGgALYWNzcEFQUEwAAAAAYXBwbAAAAAAA
+AAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAALZGVzYwAAAQgAAABvZHNjbQAAAXgAAAWcY3BydAAABxQAAAA4d3RwdAAAB0wA
+AAAUclhZWgAAB2AAAAAUZ1hZWgAAB3QAAAAUYlhZWgAAB4gAAAAUclRSQwAAB5wAAAAOY2hhZAAAB6wA
+AAAsYlRSQwAAB5wAAAAOZ1RSQwAAB5wAAAAOZGVzYwAAAAAAAAAUR2VuZXJpYyBSR0IgUHJvZmlsZQAA
+AAAAAAAAAAAAFEdlbmVyaWMgUkdCIFByb2ZpbGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAG1sdWMAAAAAAAAAHwAAAAxza1NLAAAAKAAAAYRkYURLAAAALgAAAaxj
+YUVTAAAAJAAAAdp2aVZOAAAAJAAAAf5wdEJSAAAAJgAAAiJ1a1VBAAAAKgAAAkhmckZVAAAAKAAAAnJo
+dUhVAAAAKAAAApp6aFRXAAAAFgAAAsJuYk5PAAAAJgAAAthjc0NaAAAAIgAAAv5oZUlMAAAAHgAAAyBp
+dElUAAAAKAAAAz5yb1JPAAAAJAAAA2ZkZURFAAAALAAAA4prb0tSAAAAFgAAA7ZzdlNFAAAAJgAAAth6
+aENOAAAAFgAAA8xqYUpQAAAAGgAAA+JlbEdSAAAAIgAAA/xwdFBPAAAAJgAABB5ubE5MAAAAKAAABERl
+c0VTAAAAJgAABB50aFRIAAAAJAAABGx0clRSAAAAIgAABJBmaUZJAAAAKAAABLJockhSAAAAKAAABNpw
+bFBMAAAALAAABQJydVJVAAAAIgAABS5hckVHAAAAJgAABVBlblVTAAAAJgAABXYAVgFhAGUAbwBiAGUA
+YwBuAP0AIABSAEcAQgAgAHAAcgBvAGYAaQBsAEcAZQBuAGUAcgBlAGwAIABSAEcAQgAtAGIAZQBzAGsA
+cgBpAHYAZQBsAHMAZQBQAGUAcgBmAGkAbAAgAFIARwBCACAAZwBlAG4A6AByAGkAYwBDHqUAdQAgAGgA
+7ABuAGgAIABSAEcAQgAgAEMAaAB1AG4AZwBQAGUAcgBmAGkAbAAgAFIARwBCACAARwBlAG4A6QByAGkA
+YwBvBBcEMAQzBDAEOwRMBD0EOAQ5ACAEPwRABD4ERAQwBDkEOwAgAFIARwBCAFAAcgBvAGYAaQBsACAA
+ZwDpAG4A6QByAGkAcQB1AGUAIABSAFYAQgDBAGwAdABhAGwA4QBuAG8AcwAgAFIARwBCACAAcAByAG8A
+ZgBpAGyQGnUoACAAUgBHAEIAIIJyX2ljz4/wAEcAZQBuAGUAcgBpAHMAawAgAFIARwBCAC0AcAByAG8A
+ZgBpAGwATwBiAGUAYwBuAP0AIABSAEcAQgAgAHAAcgBvAGYAaQBsBeQF6AXVBeQF2QXcACAAUgBHAEIA
+IAXbBdwF3AXZAFAAcgBvAGYAaQBsAG8AIABSAEcAQgAgAGcAZQBuAGUAcgBpAGMAbwBQAHIAbwBmAGkA
+bAAgAFIARwBCACAAZwBlAG4AZQByAGkAYwBBAGwAbABnAGUAbQBlAGkAbgBlAHMAIABSAEcAQgAtAFAA
+cgBvAGYAaQBsx3y8GAAgAFIARwBCACDVBLhc0wzHfGZukBoAIABSAEcAQgAgY8+P8GWHTvZOAIIsACAA
+UgBHAEIAIDDXMO0w1TChMKQw6wOTA7UDvQO5A7oDzAAgA8ADwQO/A8YDrwO7ACAAUgBHAEIAUABlAHIA
+ZgBpAGwAIABSAEcAQgAgAGcAZQBuAOkAcgBpAGMAbwBBAGwAZwBlAG0AZQBlAG4AIABSAEcAQgAtAHAA
+cgBvAGYAaQBlAGwOQg4bDiMORA4fDiUOTAAgAFIARwBCACAOFw4xDkgOJw5EDhsARwBlAG4AZQBsACAA
+UgBHAEIAIABQAHIAbwBmAGkAbABpAFkAbABlAGkAbgBlAG4AIABSAEcAQgAtAHAAcgBvAGYAaQBpAGwA
+aQBHAGUAbgBlAHIAaQENAGsAaQAgAFIARwBCACAAcAByAG8AZgBpAGwAVQBuAGkAdwBlAHIAcwBhAGwA
+bgB5ACAAcAByAG8AZgBpAGwAIABSAEcAQgQeBDEESQQ4BDkAIAQ/BEAEPgREBDgEOwRMACAAUgBHAEIG
+RQZEBkEAIAYqBjkGMQZKBkEAIABSAEcAQgAgBicGRAY5BicGRQBHAGUAbgBlAHIAaQBjACAAUgBHAEIA
+IABQAHIAbwBmAGkAbABldGV4dAAAAABDb3B5cmlnaHQgMjAwNyBBcHBsZSBJbmMuLCBhbGwgcmlnaHRz
+IHJlc2VydmVkLgBYWVogAAAAAAAA81IAAQAAAAEWz1hZWiAAAAAAAAB0TQAAPe4AAAPQWFlaIAAAAAAA
+AFp1AACscwAAFzRYWVogAAAAAAAAKBoAABWfAAC4NmN1cnYAAAAAAAAAAQHNAABzZjMyAAAAAAABDEIA
+AAXe///zJgAAB5IAAP2R///7ov///aMAAAPcAADAbNIlJicoWiRjbGFzc25hbWVYJGNsYXNzZXNfEBBO
+U0JpdG1hcEltYWdlUmVwoycpKlpOU0ltYWdlUmVwWE5TT2JqZWN00iUmLC1XTlNBcnJheaIsKtIlJi8w
+Xk5TTXV0YWJsZUFycmF5oy8sKtMyMwo0NTZXTlNXaGl0ZVxOU0NvbG9yU3BhY2VEMCAwABADgAzSJSY4
+OVdOU0NvbG9yojgq0iUmOzxXTlNJbWFnZaI7Kl8QD05TS2V5ZWRBcmNoaXZlctE/QFRyb290gAEACAAR
+ABoAIwAtADIANwBGAEwAVwBeAGUAcgB5AIEAgwCFAIoAjACOAJcAnACnAKkAqwCtALIAtQC3ALkAuwC9
+AMIA2QDbAN1Bv0HEQc9B2EHrQe9B+kIDQghCEEITQhhCJ0IrQjJCOkJHQkxCTkJQQlVCXUJgQmVCbUJw
+QoJChUKKAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAQow
+</mutableData>
+        </image>
         <image name="logo" width="60" height="60"/>
     </resources>
 </document>
