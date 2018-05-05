@@ -161,7 +161,6 @@
 		E995A43B209A3A80000EB94A /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
 		E995A43C209A3A81000EB94A /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		E995A449209A3E19000EB94A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E995A469209A45F4000EB94A /* WaaZi TV copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WaaZi TV copy-Info.plist"; path = "/Users/Akhil/Desktop/Anshad/WaaZiTV_iOS/WaaZi TV/WaaZi TV copy-Info.plist"; sourceTree = "<absolute>"; };
 		E9C108D9209B7BBC005A6FF2 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -343,7 +342,6 @@
 				E995A3ED209A25BE000EB94A /* Products */,
 				36611DE4996BFF82330C4C43 /* Pods */,
 				78A73103CAB26089F851C712 /* Frameworks */,
-				E995A469209A45F4000EB94A /* WaaZi TV copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};

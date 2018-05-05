@@ -8,7 +8,9 @@
 
 import UIKit
 import AVKit
-class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,PlayerDelegate {
+   
+    
 
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -27,7 +29,8 @@ class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICo
         // Do any additional setup after loading the view.
     }
     func setupViews(){
-       videoPlayerView = VideoPlayerView.init(frame: self.playerView.frame)
+        videoPlayerView = VideoPlayerView.init(frame: self.playerView.frame)
+        videoPlayerView?.delegate  = self
         self.playerView.addSubview(videoPlayerView!)
         let url:URL = URL.init(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4")!
         videoPlayerView?.setVideo(url)
@@ -44,6 +47,15 @@ class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICo
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func fullScreenButtonClicked() {
+//        videoPlayerView?.frame = self.view.frame
+//        self.view.layoutSubviews()
+//        videoPlayerView?.layoutIfNeeded()
+        
+        let value = UIInterfaceOrientation.landscapeRight.rawValue
+       UIDevice.current.setValue(value, forKey: "orientation")
     }
     func setupCollectionView() {
         collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")

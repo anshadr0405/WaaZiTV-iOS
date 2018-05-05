@@ -2,14 +2,21 @@
 
 import UIKit
 import AVFoundation
-
+protocol PlayerDelegate: class {
+    func fullScreenButtonClicked()
+}
 class VideoPlayerView: NibView {
 
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var toolBarView: UIView!
+    @IBOutlet weak var totalTimeLabel: UILabel!
     
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var fullScreenButton: UIButton!
+    @IBOutlet weak var seekBar: UISlider!
+    @IBOutlet weak var watchedTimeLabel: UILabel!
     typealias PlayerStatusCallback = (_ status: String) -> Void
-
+     var delegate: PlayerDelegate?
     var onVideoEnded: (() -> Void)? = nil
     
     var videoPlayer: AVPlayer? = nil
@@ -41,8 +48,8 @@ class VideoPlayerView: NibView {
     
     
     func initialize() {
-         Bundle.main.loadNibNamed("VideoPlayerView", owner: self, options:nil)
-
+        Bundle.main.loadNibNamed("VideoPlayerView", owner: self, options:nil)
+      
         videoPlayer = AVPlayer()
         videoPlayer?.actionAtItemEnd = .pause
         videoPlayerLayer = AVPlayerLayer(player: videoPlayer)
@@ -67,11 +74,11 @@ class VideoPlayerView: NibView {
     
     
     @objc func handleTapGesture(_ gesture:UITapGestureRecognizer) {
-        if isPlaying() {
-            videoPlayer?.pause()
-        } else {
-            videoPlayer?.play()
-        }
+//        if isPlaying() {
+//            videoPlayer?.pause()
+//        } else {
+//            videoPlayer?.play()
+//        }
     }
     
     func setVideo(_ videoUrl: URL) {
@@ -144,4 +151,25 @@ class VideoPlayerView: NibView {
         self.videoPlayer = nil
     }
 
+    //Controls
+    @IBAction func fullscreenButtonClicked(_ sender: Any) {
+        delegate?.fullScreenButtonClicked()
+        
+    }
+    @IBAction func playButtonClicked(_ sender: Any) {
+        if isPlaying() {
+            videoPlayer?.pause()
+
+        }
+        else{
+            videoPlayer?.play()
+
+        }
+        
+    }
+    
+    @IBAction func seekBarValueChange(_ sender: Any) {
+    }
+    
+   
 }
