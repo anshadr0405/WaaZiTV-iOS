@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Constant {
+public struct Constant {
     
     let BaseUrl:String = ""
     internal let APP_DELEGATE = UIApplication.shared.delegate as! AppDelegate

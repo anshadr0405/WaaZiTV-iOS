@@ -37,6 +37,8 @@ public class Service: ServiceProtocol {
 		// Wrap in a promise the request itself
 		let op = Promise<ResponseProtocol>(in: request.context ?? .background, token: request.invalidationToken, { (r, rj, s) in
 			// Attempt to create the object to perform request
+            
+            print(request)
 			let dataOperation: DataRequest = try Alamofire.request(request.urlRequest(in: self))
 			// Execute operation in Alamofire
 			dataOperation.response(completionHandler: { rData in

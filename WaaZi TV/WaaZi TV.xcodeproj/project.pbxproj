@@ -47,6 +47,9 @@
 		E92BA0A3209B614D0009AAD7 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92BA0A2209B614D0009AAD7 /* MenuModel.swift */; };
 		E92BA0A5209B66F30009AAD7 /* slide_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = E92BA0A4209B643C0009AAD7 /* slide_menu.json */; };
 		E95EC7E0209CD561001112A1 /* VideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95EC7DF209CD561001112A1 /* VideoPlayerView.xib */; };
+		E95EC7EB209E1E22001112A1 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95EC7EA209E1E22001112A1 /* LoginManager.swift */; };
+		E95EC7EE209E1EFB001112A1 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95EC7ED209E1EFB001112A1 /* BaseManager.swift */; };
+		E95EC7FC209E2F09001112A1 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95EC7F9209E2E3A001112A1 /* Keychain.swift */; };
 		E995A3F0209A25BE000EB94A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A3EF209A25BE000EB94A /* AppDelegate.swift */; };
 		E995A3F5209A25BE000EB94A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E995A3F3209A25BE000EB94A /* Main.storyboard */; };
 		E995A3F7209A25BE000EB94A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E995A3F6209A25BE000EB94A /* Assets.xcassets */; };
@@ -56,7 +59,7 @@
 		E995A423209A295B000EB94A /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A422209A295B000EB94A /* BaseVC.swift */; };
 		E995A427209A29A8000EB94A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A426209A29A8000EB94A /* LoginVC.swift */; };
 		E995A42C209A330D000EB94A /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A42B209A330D000EB94A /* EndPoints.swift */; };
-		E995A432209A37D1000EB94A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A431209A37D1000EB94A /* Common.swift */; };
+		E995A432209A37D1000EB94A /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A431209A37D1000EB94A /* NetworkUtils.swift */; };
 		E995A434209A3A2A000EB94A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A433209A3A2A000EB94A /* Extensions.swift */; };
 		E995A43D209A3A81000EB94A /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A435209A3A7F000EB94A /* RequestProtocol.swift */; };
 		E995A43E209A3A81000EB94A /* ServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A436209A3A7F000EB94A /* ServiceConfig.swift */; };
@@ -68,6 +71,17 @@
 		E995A444209A3A81000EB94A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A43C209A3A81000EB94A /* Request.swift */; };
 		E995A44A209A3E19000EB94A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A449209A3E19000EB94A /* Constants.swift */; };
 		E9C108DA209B7BBC005A6FF2 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C108D9209B7BBC005A6FF2 /* NavigationController.swift */; };
+		E9DA8A38209EDF3600C5080F /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA8A36209EDF3200C5080F /* ApiResponse.swift */; };
+		E9DA8A39209EDF3800C5080F /* Boxapi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA8A37209EDF3200C5080F /* Boxapi.swift */; };
+		E9DA8A3B209F0E4900C5080F /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA8A3A209F0E4900C5080F /* HomeManager.swift */; };
+		E9DA8A41209F122200C5080F /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA8A40209F121C00C5080F /* Categories.swift */; };
+		E9DA8A42209F122500C5080F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA8A3F209F121C00C5080F /* Category.swift */; };
+		E9DA8A43209F122800C5080F /* GroupsResposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA8A3E209F121C00C5080F /* GroupsResposeModel.swift */; };
+		E9DA8A49209F744A00C5080F /* ChannelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9DA8A48209F743E00C5080F /* ChannelCell.xib */; };
+		E9DA8A4A209F744D00C5080F /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA8A47209F743E00C5080F /* ChannelCell.swift */; };
+		E9DA8A4B209F745000C5080F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA8A46209F743D00C5080F /* HeaderView.swift */; };
+		E9DA8A4C209F745B00C5080F /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9DA8A45209F743D00C5080F /* HeaderView.xib */; };
+		E9DA8A4E209F761E00C5080F /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA8A4D209F761E00C5080F /* CategoryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +149,9 @@
 		E92BA0A2209B614D0009AAD7 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		E92BA0A4209B643C0009AAD7 /* slide_menu.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = slide_menu.json; sourceTree = "<group>"; };
 		E95EC7DF209CD561001112A1 /* VideoPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayerView.xib; sourceTree = "<group>"; };
+		E95EC7EA209E1E22001112A1 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		E95EC7ED209E1EFB001112A1 /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
+		E95EC7F9209E2E3A001112A1 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		E995A3EC209A25BE000EB94A /* WaaZi TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WaaZi TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E995A3EF209A25BE000EB94A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E995A3F4209A25BE000EB94A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,7 +167,7 @@
 		E995A422209A295B000EB94A /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		E995A426209A29A8000EB94A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E995A42B209A330D000EB94A /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
-		E995A431209A37D1000EB94A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		E995A431209A37D1000EB94A /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		E995A433209A3A2A000EB94A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E995A435209A3A7F000EB94A /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		E995A436209A3A7F000EB94A /* ServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfig.swift; sourceTree = "<group>"; };
@@ -162,6 +179,17 @@
 		E995A43C209A3A81000EB94A /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		E995A449209A3E19000EB94A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9C108D9209B7BBC005A6FF2 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		E9DA8A36209EDF3200C5080F /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		E9DA8A37209EDF3200C5080F /* Boxapi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxapi.swift; sourceTree = "<group>"; };
+		E9DA8A3A209F0E4900C5080F /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
+		E9DA8A3E209F121C00C5080F /* GroupsResposeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsResposeModel.swift; sourceTree = "<group>"; };
+		E9DA8A3F209F121C00C5080F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E9DA8A40209F121C00C5080F /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		E9DA8A45209F743D00C5080F /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		E9DA8A46209F743D00C5080F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E9DA8A47209F743E00C5080F /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		E9DA8A48209F743E00C5080F /* ChannelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCell.xib; sourceTree = "<group>"; };
+		E9DA8A4D209F761E00C5080F /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +271,7 @@
 		E92BA061209B48360009AAD7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				E9DA8A44209F742A00C5080F /* TableViewCells */,
 				E95EC7DE209CD4CD001112A1 /* CustomPlayer */,
 				6CC09D5C209C3CD5000671B1 /* CollectionViewCell */,
 				E92BA062209B487E0009AAD7 /* WTTextField.swift */,
@@ -253,6 +282,7 @@
 		E92BA064209B48FE0009AAD7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				E95EC7F9209E2E3A001112A1 /* Keychain.swift */,
 				E92BA065209B49100009AAD7 /* SwiftValidator */,
 			);
 			path = Library;
@@ -318,6 +348,7 @@
 		E92BA09F209B53200009AAD7 /* SlideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				E9DA8A4D209F761E00C5080F /* CategoryViewModel.swift */,
 				E92BA0A0209B53500009AAD7 /* LeftMenuController.swift */,
 				E9C108D9209B7BBC005A6FF2 /* NavigationController.swift */,
 			);
@@ -331,6 +362,16 @@
 				E95EC7DF209CD561001112A1 /* VideoPlayerView.xib */,
 			);
 			path = CustomPlayer;
+			sourceTree = "<group>";
+		};
+		E95EC7EC209E1EE0001112A1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E95EC7ED209E1EFB001112A1 /* BaseManager.swift */,
+				E95EC7EA209E1E22001112A1 /* LoginManager.swift */,
+				E9DA8A3A209F0E4900C5080F /* HomeManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		E995A3E3209A25BE000EB94A = {
@@ -358,6 +399,7 @@
 		E995A3EE209A25BE000EB94A /* WaaZi TV */ = {
 			isa = PBXGroup;
 			children = (
+				E95EC7EC209E1EE0001112A1 /* Managers */,
 				E92BA09C209B4B910009AAD7 /* Extensions */,
 				E92BA064209B48FE0009AAD7 /* Library */,
 				E995A448209A3E03000EB94A /* Constants */,
@@ -394,6 +436,7 @@
 		E995A41D209A289C000EB94A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E9DA8A35209EDF2300C5080F /* API */,
 				E92BA0A2209B614D0009AAD7 /* MenuModel.swift */,
 				E92BA0A4209B643C0009AAD7 /* slide_menu.json */,
 			);
@@ -523,7 +566,7 @@
 			isa = PBXGroup;
 			children = (
 				E995A433209A3A2A000EB94A /* Extensions.swift */,
-				E995A431209A37D1000EB94A /* Common.swift */,
+				E995A431209A37D1000EB94A /* NetworkUtils.swift */,
 			);
 			path = "Network Utils";
 			sourceTree = "<group>";
@@ -534,6 +577,45 @@
 				E995A449209A3E19000EB94A /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		E9DA8A35209EDF2300C5080F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E9DA8A3D209F120200C5080F /* Groups */,
+				E9DA8A3C209F11F100C5080F /* Login */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E9DA8A3C209F11F100C5080F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E9DA8A37209EDF3200C5080F /* Boxapi.swift */,
+				E9DA8A36209EDF3200C5080F /* ApiResponse.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E9DA8A3D209F120200C5080F /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				E9DA8A40209F121C00C5080F /* Categories.swift */,
+				E9DA8A3F209F121C00C5080F /* Category.swift */,
+				E9DA8A3E209F121C00C5080F /* GroupsResposeModel.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		E9DA8A44209F742A00C5080F /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				E9DA8A47209F743E00C5080F /* ChannelCell.swift */,
+				E9DA8A48209F743E00C5080F /* ChannelCell.xib */,
+				E9DA8A46209F743D00C5080F /* HeaderView.swift */,
+				E9DA8A45209F743D00C5080F /* HeaderView.xib */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -649,6 +731,8 @@
 			files = (
 				E92BA0A5209B66F30009AAD7 /* slide_menu.json in Resources */,
 				E95EC7E0209CD561001112A1 /* VideoPlayerView.xib in Resources */,
+				E9DA8A49209F744A00C5080F /* ChannelCell.xib in Resources */,
+				E9DA8A4C209F745B00C5080F /* HeaderView.xib in Resources */,
 				E995A3FA209A25BE000EB94A /* LaunchScreen.storyboard in Resources */,
 				E995A3F7209A25BE000EB94A /* Assets.xcassets in Resources */,
 				E995A3F5209A25BE000EB94A /* Main.storyboard in Resources */,
@@ -761,18 +845,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				E92BA095209B49C60009AAD7 /* PasswordRule.swift in Sources */,
+				E9DA8A43209F122800C5080F /* GroupsResposeModel.swift in Sources */,
 				E92BA093209B49C60009AAD7 /* MaxLengthRule.swift in Sources */,
 				E92BA084209B49B40009AAD7 /* Validatable.swift in Sources */,
 				E995A423209A295B000EB94A /* BaseVC.swift in Sources */,
 				E92BA086209B49B40009AAD7 /* ValidationError.swift in Sources */,
+				E95EC7EB209E1E22001112A1 /* LoginManager.swift in Sources */,
 				E995A434209A3A2A000EB94A /* Extensions.swift in Sources */,
 				E92BA098209B49C60009AAD7 /* RequiredRule.swift in Sources */,
+				E95EC7FC209E2F09001112A1 /* Keychain.swift in Sources */,
 				E92BA091209B49C60009AAD7 /* IPV4Rule.swift in Sources */,
 				E92BA08B209B49C60009AAD7 /* ConfirmRule.swift in Sources */,
+				E9DA8A39209EDF3800C5080F /* Boxapi.swift in Sources */,
 				E92BA087209B49B40009AAD7 /* ValidatorDictionary.swift in Sources */,
 				E995A427209A29A8000EB94A /* LoginVC.swift in Sources */,
 				E92BA08D209B49C60009AAD7 /* ExactLengthRule.swift in Sources */,
 				E92BA08E209B49C60009AAD7 /* FloatRule.swift in Sources */,
+				E9DA8A3B209F0E4900C5080F /* HomeManager.swift in Sources */,
 				E995A443209A3A81000EB94A /* Operations.swift in Sources */,
 				E92BA085209B49B40009AAD7 /* ValidationDelegate.swift in Sources */,
 				E9C108DA209B7BBC005A6FF2 /* NavigationController.swift in Sources */,
@@ -781,6 +870,7 @@
 				6CC09D5F209C3D08000671B1 /* CollectionViewCell.swift in Sources */,
 				6CF44C84209ACDD90054C560 /* WTUtils.swift in Sources */,
 				E92BA088209B49C60009AAD7 /* AlphaNumericRule.swift in Sources */,
+				E9DA8A42209F122500C5080F /* Category.swift in Sources */,
 				E92BA08A209B49C60009AAD7 /* CharacterSetRule.swift in Sources */,
 				E92BA09E209B4C6A0009AAD7 /* CommonExtensions.swift in Sources */,
 				E995A42C209A330D000EB94A /* EndPoints.swift in Sources */,
@@ -789,10 +879,14 @@
 				E92BA0A1209B53500009AAD7 /* LeftMenuController.swift in Sources */,
 				6CC09D5A209C2369000671B1 /* DetailsVC.swift in Sources */,
 				E92BA0A3209B614D0009AAD7 /* MenuModel.swift in Sources */,
+				E9DA8A4E209F761E00C5080F /* CategoryViewModel.swift in Sources */,
+				E9DA8A4B209F745000C5080F /* HeaderView.swift in Sources */,
+				E95EC7EE209E1EFB001112A1 /* BaseManager.swift in Sources */,
 				E92BA09B209B49C60009AAD7 /* ZipCodeRule.swift in Sources */,
+				E9DA8A38209EDF3600C5080F /* ApiResponse.swift in Sources */,
 				E92BA099209B49C60009AAD7 /* Rule.swift in Sources */,
 				E995A44A209A3E19000EB94A /* Constants.swift in Sources */,
-				E995A432209A37D1000EB94A /* Common.swift in Sources */,
+				E995A432209A37D1000EB94A /* NetworkUtils.swift in Sources */,
 				E995A441209A3A81000EB94A /* OperationProtocol.swift in Sources */,
 				6CC09D58209C2354000671B1 /* HomeVC.swift in Sources */,
 				E92BA097209B49C60009AAD7 /* RegexRule.swift in Sources */,
@@ -801,6 +895,8 @@
 				E995A442209A3A81000EB94A /* ResponseProtocol.swift in Sources */,
 				E92BA083209B499D0009AAD7 /* Validator.swift in Sources */,
 				E995A43F209A3A81000EB94A /* Service.swift in Sources */,
+				E9DA8A4A209F744D00C5080F /* ChannelCell.swift in Sources */,
+				E9DA8A41209F122200C5080F /* Categories.swift in Sources */,
 				E92BA090209B49C60009AAD7 /* HexColorRule.swift in Sources */,
 				E92BA092209B49C60009AAD7 /* ISBNRule.swift in Sources */,
 				E995A43E209A3A81000EB94A /* ServiceConfig.swift in Sources */,
@@ -976,9 +1072,11 @@
 			baseConfigurationReference = 38C4434D591B3C442A371DB2 /* Pods-WaaZi TV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BASE_URL = "https://www.waazitv.com/feeds/android.php";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H72V55XU8C;
+				HOST_NAME = "https://www.waazitv.com";
 				INFOPLIST_FILE = "WaaZi TV/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -995,9 +1093,11 @@
 			baseConfigurationReference = D105F4D654251D7EB45EF427 /* Pods-WaaZi TV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BASE_URL = "https://www.waazitv.com/feeds/android.php";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H72V55XU8C;
+				HOST_NAME = "https://www.waazitv.com";
 				INFOPLIST_FILE = "WaaZi TV/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
