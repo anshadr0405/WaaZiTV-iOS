@@ -25,37 +25,37 @@ class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     }
     
 
-    func authenticateUserAndGetGroups(){
-        manager.userAuthentiationService { (status, response, errorMessage) in
-            if status == .loading{
-                Constant.init().APP_DELEGATE.showFullScreenLoadingIndicator()
-            }
-            else if status == .success{
-                
-                self.manager.getGroupsService(completion: { (status, response, errorMessage) in
-                    if status == .loading{
-                    }
-                    else if status == .success{
-                        Constant.init().APP_DELEGATE.hideFullScreenLoadingIndicator()
-                        self.messageLabel.isHidden = true
-                        self.collectionView.isHidden = false
-                    }
-                    else{
-                        Constant.init().APP_DELEGATE.hideFullScreenLoadingIndicator()
-                    }
-                })
-            }
-            else{
-                  Constant.init().APP_DELEGATE.hideFullScreenLoadingIndicator()
-                  self.messageLabel.text = "User authentication failed"
-                self.messageLabel.isHidden = false
-                self.collectionView.isHidden = true
-
-            }
-        }
-        
-    }
-    
+//    func authenticateUserAndGetGroups(){
+//        manager.userAuthentiationService { (status, response, errorMessage) in
+//            if status == .loading{
+//                Constant.init().APP_DELEGATE.showFullScreenLoadingIndicator()
+//            }
+//            else if status == .success{
+//                
+//                self.manager.getGroupsService(completion: { (status, response, errorMessage) in
+//                    if status == .loading{
+//                    }
+//                    else if status == .success{
+//                        Constant.init().APP_DELEGATE.hideFullScreenLoadingIndicator()
+//                        self.messageLabel.isHidden = true
+//                        self.collectionView.isHidden = false
+//                    }
+//                    else{
+//                        Constant.init().APP_DELEGATE.hideFullScreenLoadingIndicator()
+//                    }
+//                })
+//            }
+//            else{
+//                  Constant.init().APP_DELEGATE.hideFullScreenLoadingIndicator()
+//                  self.messageLabel.text = "User authentication failed"
+//                self.messageLabel.isHidden = false
+//                self.collectionView.isHidden = true
+//
+//            }
+//        }
+//        
+//    }
+//    
     func setupCollectionView() {
         collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         self.messageLabel.isHidden = true

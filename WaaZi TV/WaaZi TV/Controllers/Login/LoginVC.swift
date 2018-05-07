@@ -32,11 +32,11 @@ class LoginVC: BaseVC {
             }
             else if status == .success{
                 Constant.init().APP_DELEGATE.hideFullScreenLoadingIndicator()
-                self.loadHomeVC()
+                self.loadAuthenticationVC()
             }
             else{
                 Constant.init().APP_DELEGATE.hideFullScreenLoadingIndicator()
-                self.loadHomeVC()
+               self.loadAuthenticationVC()
                 print(errorMessage ?? "Login failed")
 
             }
@@ -50,6 +50,11 @@ class LoginVC: BaseVC {
     
     func loadHomeVC() {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "LGSideMenuController") as! LGSideMenuController
+        UIApplication.shared.keyWindow?.rootViewController = viewController
+    }
+    
+    func loadAuthenticationVC() {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "AuthenticationVC") as! AuthenticationVC
         UIApplication.shared.keyWindow?.rootViewController = viewController
     }
 }

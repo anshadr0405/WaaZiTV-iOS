@@ -9,7 +9,7 @@ protocol HeaderViewDelegate: class {
 class HeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel?
-    @IBOutlet weak var arrowLabel: UILabel?
+    @IBOutlet weak var rightArrow: UIImageView!
     var section: Int = 0
     var item: HeaderModel? {
         didSet {
@@ -42,7 +42,7 @@ class HeaderView: UITableViewHeaderFooterView {
     }
 
     func setCollapsed(collapsed: Bool) {
-        arrowLabel?.rotate(collapsed ? 0.0 : .pi)
+        self.rightArrow?.rotate(collapsed ? 0.0 : .pi)
     }
 }
 

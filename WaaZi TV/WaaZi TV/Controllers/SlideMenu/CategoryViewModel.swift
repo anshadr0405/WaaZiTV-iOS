@@ -49,13 +49,13 @@ extension CategoryViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let item = items[section]
         guard item.isCollapsible! else {
-            return (item.categories?.count) ?? 0
+            return 0
         }
         
         if item.isCollapsed! {
             return 0
         } else {
-            return item.rowCount!
+            return (item.categories?.count) ?? 0
         }
     }
     
@@ -77,7 +77,8 @@ extension CategoryViewModel: UITableViewDelegate {
             headerView.item = item 
             headerView.section = section
             headerView.delegate = self
-            headerView.arrowLabel?.isHidden = !item.isCollapsible!
+            headerView.rightArrow?.isHidden = !item.isCollapsible!
+            headerView.backgroundColor = UIColor.getAppThemeColor()
             return headerView
         }
         return UIView()

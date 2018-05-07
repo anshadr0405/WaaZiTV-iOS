@@ -13,6 +13,7 @@
 		6CC09D5A209C2369000671B1 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC09D59209C2369000671B1 /* DetailsVC.swift */; };
 		6CC09D5F209C3D08000671B1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC09D5D209C3D08000671B1 /* CollectionViewCell.swift */; };
 		6CC09D60209C3D08000671B1 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CC09D5E209C3D08000671B1 /* CollectionViewCell.xib */; };
+		6CD8BEC620A0262D006A8AE0 /* AuthenticationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8BEC520A0262D006A8AE0 /* AuthenticationVC.swift */; };
 		6CF44C84209ACDD90054C560 /* WTUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF44C83209ACDD90054C560 /* WTUtils.swift */; };
 		BA9FDE93C492A1E8848726AC /* Pods_WaaZi_TV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B0A56663AFD1DF0B2FDE60 /* Pods_WaaZi_TV.framework */; };
 		E391388EC92B75C369AEA0B8 /* Pods_WaaZi_TVUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E6EAACA56220F89A221F74 /* Pods_WaaZi_TVUITests.framework */; };
@@ -111,6 +112,7 @@
 		6CC09D59209C2369000671B1 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		6CC09D5D209C3D08000671B1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		6CC09D5E209C3D08000671B1 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		6CD8BEC520A0262D006A8AE0 /* AuthenticationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVC.swift; sourceTree = "<group>"; };
 		6CF44C83209ACDD90054C560 /* WTUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTUtils.swift; sourceTree = "<group>"; };
 		89B0A56663AFD1DF0B2FDE60 /* Pods_WaaZi_TV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaaZi_TV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D105F4D654251D7EB45EF427 /* Pods-WaaZi TV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaaZi TV.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaaZi TV/Pods-WaaZi TV.release.xcconfig"; sourceTree = "<group>"; };
@@ -256,6 +258,14 @@
 				6CC09D5E209C3D08000671B1 /* CollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		6CD8BEC420A025B7006A8AE0 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				6CD8BEC520A0262D006A8AE0 /* AuthenticationVC.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		78A73103CAB26089F851C712 /* Frameworks */ = {
@@ -456,6 +466,7 @@
 		E995A41F209A28AB000EB94A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6CD8BEC420A025B7006A8AE0 /* Authentication */,
 				6CC09D56209C231F000671B1 /* DetailsVC */,
 				6CC09D55209C2317000671B1 /* Home */,
 				E92BA09F209B53200009AAD7 /* SlideMenu */,
@@ -855,6 +866,7 @@
 				E92BA098209B49C60009AAD7 /* RequiredRule.swift in Sources */,
 				E95EC7FC209E2F09001112A1 /* Keychain.swift in Sources */,
 				E92BA091209B49C60009AAD7 /* IPV4Rule.swift in Sources */,
+				6CD8BEC620A0262D006A8AE0 /* AuthenticationVC.swift in Sources */,
 				E92BA08B209B49C60009AAD7 /* ConfirmRule.swift in Sources */,
 				E9DA8A39209EDF3800C5080F /* Boxapi.swift in Sources */,
 				E92BA087209B49B40009AAD7 /* ValidatorDictionary.swift in Sources */,
