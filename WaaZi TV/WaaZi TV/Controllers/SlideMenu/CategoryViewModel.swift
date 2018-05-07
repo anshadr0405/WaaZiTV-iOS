@@ -9,7 +9,12 @@
 import Foundation
 import UIKit
 import SDWebImage
-
+protocol CategoryViewModelDelegate: class {
+    func didSelectCategory(category:Category,atIndexPath:IndexPath)
+    func didSelectSection(menuItem:HeaderModel,atSection:Int)
+    
+    
+}
 class  HeaderModel:MenuModel {
     var categories: [Category]?
     required init?(dictionary: NSDictionary) {
@@ -24,7 +29,8 @@ class  HeaderModel:MenuModel {
 
 class CategoryViewModel: NSObject {
     var items = [HeaderModel]()
-    
+    weak var delegate: CategoryViewModelDelegate?
+
     var reloadSections: ((_ section: Int) -> Void)?
     
     override init() {
@@ -67,7 +73,7 @@ extension CategoryViewModel: UITableViewDataSource {
        let cell = tableView.dequeueReusableCell(withIdentifier: ChannelCell.identifier, for: indexPath) as? ChannelCell
         let category = item.categories![indexPath.row]
           cell?.nameLabel?.text = category.title
-        cell?.pictureImageView?.sd_setImage(with: URL.init(string: category.sd_image!), completed: nil)
+        cell?.pictureImageView?.sd_setImage(with: URL.init(string: category.hd_image!), completed: nil)
        
          return cell!
         
@@ -90,6 +96,9 @@ extension CategoryViewModel: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+        let item = items[indexPath.section]
+        let category = item.categories![indexPath.row]
+        delegate?.didSelectCategory(category:category , atIndexPath: indexPath)
     }
 }
 
@@ -102,10 +111,11 @@ extension CategoryViewModel: HeaderViewDelegate {
             let collapsed = !item.isCollapsed!
             item.isCollapsed = collapsed
             header.setCollapsed(collapsed: collapsed)
-            
             // Adjust the number of the rows inside the section
             reloadSections?(section)
         }
+        delegate?.didSelectSection(menuItem: item, atSection: section)
+        
     }
     
     

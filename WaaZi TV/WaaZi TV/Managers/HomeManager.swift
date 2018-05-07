@@ -10,31 +10,7 @@ import Foundation
 class HomeManager:BaseManager{
     static let sharedInstance = HomeManager()
     var LiveTVCategories : [Category]?
-    
-    func userAuthentiationService(completion:@escaping Completion){
-        completion(.loading, nil, nil)
-      let params = NetworkUtils.getCommonUrlParams(type: .authenticate)
-        
-        let config = ServiceConfig.appConfig()
-        let authenticationService:Service = Service(config!)
-        let authRequest:Request = Request(method: .get, endpoint: "", params: nil, fields:params as? ParametersDict , body: nil)
-        authenticationService.execute(authRequest, retry: 2).then( { response in
-            let responseDict = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as! [String: Any]
-            let apiResponse = ApiResponse.init(dictionary:responseDict as NSDictionary)
-            if (apiResponse?.boxapi?.result == "true"){
-                completion(.success, apiResponse as AnyObject, nil)
-            }
-            else if (apiResponse?.boxapi?.result == "false"){
-                completion(.error, nil, apiResponse?.boxapi?.message)
-            }
-            
-        }).catch({ err in
-            completion(.error,nil,err.localizedDescription )
-            
-        })
-    }
-    
-    
+
     func getGroupsService(completion:@escaping Completion){
         completion(.loading, nil, nil)
         let params = NetworkUtils.getCommonUrlParams(type: .groups)
@@ -45,21 +21,109 @@ class HomeManager:BaseManager{
             let responseDict = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as! [String: Any]
             if let groupsResponseModel = GroupsResposeModel.init(dictionary:responseDict as NSDictionary){
                 self.LiveTVCategories = groupsResponseModel.categories?.category
-                completion(.success, groupsResponseModel as AnyObject, nil)
+                DispatchQueue.main.async {
+                   completion(.success, groupsResponseModel as AnyObject, nil)
+                    
+                }
+               
             }
             else{
                 let apiResponse = Boxapi.init(dictionary:responseDict as NSDictionary)
                 if (apiResponse?.result == "error"){
-                    completion(.error, nil, apiResponse?.message)
+                    
+                    DispatchQueue.main.async {
+                        completion(.error, nil, apiResponse?.message)
+
+                    }
                 }
             }
          
             
         }).catch({ err in
-            completion(.error,nil,err.localizedDescription )
+            
+            DispatchQueue.main.async {
+                completion(.error,nil,err.localizedDescription )
+
+            }
             
         })
     }
     
     
+    func getChannelsService(categoryId:String,completion:@escaping Completion){
+        completion(.loading, nil, nil)
+        let params = NetworkUtils.getCommonUrlParams(type: .channels)
+        params.setValue("14", forKey: "id")
+        let config = ServiceConfig.appConfig()
+        let getChannelsService:Service = Service(config!)
+        let getChannelsRequest:Request = Request(method: .get, endpoint: "", params: nil, fields:params as? ParametersDict , body: nil)
+        getChannelsService.execute(getChannelsRequest, retry: 2).then( { response in
+            let responseDict = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as! [String: Any]
+            if let channelsResponseModel = ChannelsResponseModel.init(dictionary:responseDict as NSDictionary){
+                
+                DispatchQueue.main.async {
+                    completion(.success, channelsResponseModel as AnyObject, nil)
+                }
+                
+            }
+            else{
+                let apiResponse = Boxapi.init(dictionary:responseDict as NSDictionary)
+                if (apiResponse?.result == "error"){
+                    
+                    DispatchQueue.main.async {
+                        completion(.error, nil, apiResponse?.message)
+                        
+                    }
+                }
+            }
+            
+            
+        }).catch({ err in
+            
+            DispatchQueue.main.async {
+                completion(.error,nil,err.localizedDescription )
+                
+            }
+            
+        })
+    }
+    
+    func getChannelService(categoryId:String,completion:@escaping Completion){
+        completion(.loading, nil, nil)
+        let params = NetworkUtils.getCommonUrlParams(type: .channel)
+        params.setValue("14", forKey: "id")
+        let config = ServiceConfig.appConfig()
+        let getChannelService:Service = Service(config!)
+        let getChannelRequest:Request = Request(method: .get, endpoint: "", params: nil, fields:params as? ParametersDict , body: nil)
+        getChannelService.execute(getChannelRequest, retry: 2).then( { response in
+            let responseDict = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as! [String: Any]
+            if let groupsResponseModel = GroupsResposeModel.init(dictionary:responseDict as NSDictionary){
+                self.LiveTVCategories = groupsResponseModel.categories?.category
+                DispatchQueue.main.async {
+                    completion(.success, groupsResponseModel as AnyObject, nil)
+                    
+                }
+                
+            }
+            else{
+                let apiResponse = Boxapi.init(dictionary:responseDict as NSDictionary)
+                if (apiResponse?.result == "error"){
+                    
+                    DispatchQueue.main.async {
+                        completion(.error, nil, apiResponse?.message)
+                        
+                    }
+                }
+            }
+            
+            
+        }).catch({ err in
+            
+            DispatchQueue.main.async {
+                completion(.error,nil,err.localizedDescription )
+                
+            }
+            
+        })
+    }
 }

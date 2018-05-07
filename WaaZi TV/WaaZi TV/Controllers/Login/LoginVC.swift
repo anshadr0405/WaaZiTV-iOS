@@ -28,14 +28,14 @@ class LoginVC: BaseVC {
     @IBAction func loginButtonClicked(_ sender: Any) {
         manager.registerUser(loginType: .Username, userName: self.userNameField.text!, passWord: self.passwordField.text!) { (status,response,errorMessage) in
             if status == .loading{
-            Constant.init().APP_DELEGATE.showFullScreenLoadingIndicator()
+                APP_DELEGATE.showFullScreenLoadingIndicator()
             }
             else if status == .success{
-                Constant.init().APP_DELEGATE.hideFullScreenLoadingIndicator()
+                APP_DELEGATE.hideFullScreenLoadingIndicator()
                 self.loadAuthenticationVC()
             }
             else{
-                Constant.init().APP_DELEGATE.hideFullScreenLoadingIndicator()
+               APP_DELEGATE.hideFullScreenLoadingIndicator()
                self.loadAuthenticationVC()
                 print(errorMessage ?? "Login failed")
 

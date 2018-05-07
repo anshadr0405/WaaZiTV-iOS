@@ -13,7 +13,8 @@ class AuthenticationVC: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var messageLabel: UILabel!
-    var manager:HomeManager = HomeManager.sharedInstance
+    var homeManager:HomeManager = HomeManager.sharedInstance
+    var authenticationManager:AuthenticationManager = AuthenticationManager.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class AuthenticationVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func authenticateUserAndGetGroups(){
-        manager.userAuthentiationService { (status, response, errorMessage) in
+        authenticationManager.userAuthentiationService { (status, response, errorMessage) in
             if status == .loading{
                self.activityIndicator.startAnimating()
                self.activityIndicator.isHidden = false
@@ -37,7 +38,7 @@ class AuthenticationVC: UIViewController {
             }
             else if status == .success{
                 
-                self.manager.getGroupsService(completion: { (status, response, errorMessage) in
+                self.homeManager.getGroupsService(completion: { (status, response, errorMessage) in
                     if status == .loading{
                         
                     }

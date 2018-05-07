@@ -8,7 +8,9 @@
 
 import UIKit
 import LGSideMenuController
-class LeftMenuController: BaseVC {
+class LeftMenuController: BaseVC,CategoryViewModelDelegate {
+    
+    
     var menuItems : [MenuModel] = [MenuModel]()
     let viewModel = CategoryViewModel()
     @IBOutlet weak var nameLabel: UILabel!
@@ -20,6 +22,7 @@ class LeftMenuController: BaseVC {
 //        menuItems = WTUtils.getMenuJsonArrayWithFileName(filename: "slide_menu")
         tableView?.dataSource = viewModel
         tableView?.delegate = viewModel
+        viewModel.delegate = self
         viewModel.reloadSections = { [weak self] (section: Int) in
             self?.tableView?.beginUpdates()
             self?.tableView?.reloadSections([section], with: .fade)
@@ -42,30 +45,27 @@ class LeftMenuController: BaseVC {
     }
     
   
- 
- 
-    
-    func navigateToItem(item:MenuModel) {
+    func didSelectCategory(category: Category, atIndexPath: IndexPath) {
         sideMenuController!.hideLeftViewAnimated()
         let navigationController:UINavigationController =  sideMenuController!.rootViewController as! UINavigationController
-//      if item.id == 0 {
-//        let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: item.destination_id!) as! UITabBarController
-//        destinationVC.title = item.title
-//        navigationController.setViewControllers([destinationVC], animated: false)
-//
-//      }
-//       else{
-//        let destinationVC:BaseVC = self.storyboard?.instantiateViewController(withIdentifier: item.destination_id!) as! BaseVC
-//         destinationVC.title = item.title
-//         navigationController.setViewControllers([destinationVC], animated: false)
-//        //sideMenuController!.rootViewController = destinationVC
-//          //self.navigationController?.setViewControllers([destinationVC], animated: false)
-//
-//       }
+        let destinationVC:HomeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+        destinationVC.category = category
+        destinationVC.title = category.title
+        navigationController.setViewControllers([destinationVC], animated: false)
+    }
+    
+    func didSelectSection(menuItem: HeaderModel, atSection: Int) {
+        if(!menuItem.isCollapsible!){
+            self.navigateToItem(item: menuItem)
 
-//        let destinationVC:UINavigationController = self.storyboard?.instantiateViewController(withIdentifier: item.destination_id!) as! UINavigationController
-//        destinationVC.title = item.title
-//        sideMenuController!.rootViewController = destinationVC
+        }
+        
+    }
+ 
+    
+    func navigateToItem(item:HeaderModel) {
+        sideMenuController!.hideLeftViewAnimated()
+        let navigationController:UINavigationController =  sideMenuController!.rootViewController as! UINavigationController
         let destinationVC:BaseVC = self.storyboard?.instantiateViewController(withIdentifier: item.destination_id!) as! BaseVC
         destinationVC.title = item.title
         navigationController.setViewControllers([destinationVC], animated: false)
