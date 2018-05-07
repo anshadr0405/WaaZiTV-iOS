@@ -8,6 +8,8 @@
 //
 import Foundation
 import UIKit
+import SDWebImage
+
 class  HeaderModel:MenuModel {
     var categories: [Category]?
     required init?(dictionary: NSDictionary) {
@@ -65,6 +67,8 @@ extension CategoryViewModel: UITableViewDataSource {
        let cell = tableView.dequeueReusableCell(withIdentifier: ChannelCell.identifier, for: indexPath) as? ChannelCell
         let category = item.categories![indexPath.row]
           cell?.nameLabel?.text = category.title
+        cell?.pictureImageView?.sd_setImage(with: URL.init(string: category.sd_image!), completed: nil)
+       
          return cell!
         
         
@@ -78,7 +82,7 @@ extension CategoryViewModel: UITableViewDelegate {
             headerView.section = section
             headerView.delegate = self
             headerView.rightArrow?.isHidden = !item.isCollapsible!
-            headerView.backgroundColor = UIColor.getAppThemeColor()
+            
             return headerView
         }
         return UIView()

@@ -45,4 +45,12 @@ class WTUtils: NSObject {
         print(applicationUUID!)
         return applicationUUID!
     }
+        static func printToConsole(file:String = #file,functionName: String = #function, message:String) {
+        
+            
+            let urlStr : NSString = file.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! as NSString
+            print("\n \(NSURL(string: urlStr as String)!.lastPathComponent!)::\(functionName)::\(message) \n")
+        }
+        
+    
 }
