@@ -22,9 +22,7 @@ class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UIColle
        
     }
     override func viewWillAppear(_ animated: Bool) {
-        if category != nil {
             getChannelsFromApi()
-        }
         
     }
     func getChannelsFromApi() {
