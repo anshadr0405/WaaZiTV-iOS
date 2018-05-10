@@ -26,7 +26,7 @@ class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         
     }
     func getChannelsFromApi() {
-        manager.getChannelsService(categoryId: "") { (status,response,errorMessage) in
+        manager.getChannelsService(categoryId:self.category?.id ?? "" ) { (status,response,errorMessage) in
             if status == .loading{
                APP_DELEGATE.showFullScreenLoadingIndicator()
             }
@@ -82,8 +82,10 @@ class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        self.navigate(identifier: "DetailsVC")
+        let detailsVC:DetailsVC = storyboard?.instantiateViewController(withIdentifier: "DetailsVC") as! DetailsVC
+        let channelCategory = self.channelCategories?[indexPath.row]
+        detailsVC.selectedChannel = channelCategory
+        self.navigationController?.pushViewController(detailsVC, animated: true)
     }
     
     @available(iOS 11.0, *)

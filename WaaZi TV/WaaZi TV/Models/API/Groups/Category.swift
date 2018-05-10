@@ -9,6 +9,7 @@ public class Category {
 	public var hd_image : String?
 	public var sd_image : String?
 	public var feed_type : String?
+    public var id : String?
 
 /**
     Returns an array of models based on given dictionary.
@@ -41,7 +42,7 @@ public class Category {
     - returns: Category Instance.
 */
 	required public init?(dictionary: NSDictionary) {
-
+        id = dictionary["id"] as? String
 		title = dictionary["title"] as? String
 		description = dictionary["description"] as? String
 		feed_url = dictionary["feed_url"] as? String
@@ -59,7 +60,7 @@ public class Category {
 	public func dictionaryRepresentation() -> NSDictionary {
 
 		let dictionary = NSMutableDictionary()
-
+        dictionary.setValue(self.id, forKey: "id")
 		dictionary.setValue(self.title, forKey: "title")
 		dictionary.setValue(self.description, forKey: "description")
 		dictionary.setValue(self.feed_url, forKey: "feed_url")

@@ -10,7 +10,6 @@ import Foundation
 class HomeManager:BaseManager{
     static let sharedInstance = HomeManager()
     var LiveTVCategories : [Category]?
-
     func getGroupsService(completion:@escaping Completion){
         completion(.loading, nil, nil)
         let params = NetworkUtils.getCommonUrlParams(type: .groups)
@@ -53,6 +52,13 @@ class HomeManager:BaseManager{
     func getChannelsService(categoryId:String,completion:@escaping Completion){
         completion(.loading, nil, nil)
         let params = NetworkUtils.getCommonUrlParams(type: .channels)
+        if(categoryId != ""){
+            params.setValue(categoryId, forKey: "id")
+            
+        }
+        else{
+            params.setValue("158", forKey: "id")
+        }
         params.setValue("14", forKey: "id")
         let config = ServiceConfig.appConfig()
         let getChannelsService:Service = Service(config!)
@@ -91,16 +97,21 @@ class HomeManager:BaseManager{
     func getChannelService(categoryId:String,completion:@escaping Completion){
         completion(.loading, nil, nil)
         let params = NetworkUtils.getCommonUrlParams(type: .channel)
-        params.setValue("14", forKey: "id")
+        if(categoryId != ""){
+            params.setValue(categoryId, forKey: "id")
+
+        }
+        else{
+              params.setValue("158", forKey: "id")
+        }
         let config = ServiceConfig.appConfig()
         let getChannelService:Service = Service(config!)
         let getChannelRequest:Request = Request(method: .get, endpoint: "", params: nil, fields:params as? ParametersDict , body: nil)
         getChannelService.execute(getChannelRequest, retry: 2).then( { response in
             let responseDict = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as! [String: Any]
-            if let groupsResponseModel = GroupsResposeModel.init(dictionary:responseDict as NSDictionary){
-                self.LiveTVCategories = groupsResponseModel.categories?.category
+            if let channelDetailsModel = ChannelDetailsModel.init(dictionary:responseDict as NSDictionary){
                 DispatchQueue.main.async {
-                    completion(.success, groupsResponseModel as AnyObject, nil)
+                    completion(.success, channelDetailsModel as AnyObject, nil)
                     
                 }
                 

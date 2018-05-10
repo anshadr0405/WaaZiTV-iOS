@@ -76,6 +76,12 @@
 		E995A444209A3A81000EB94A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A43C209A3A81000EB94A /* Request.swift */; };
 		E995A44A209A3E19000EB94A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A449209A3E19000EB94A /* Constants.swift */; };
 		E9C108DA209B7BBC005A6FF2 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C108D9209B7BBC005A6FF2 /* NavigationController.swift */; };
+		E9CB798420A4AF9000E1B2DF /* Appconfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB797E20A4AF8700E1B2DF /* Appconfig.swift */; };
+		E9CB798520A4AF9000E1B2DF /* AppAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB797F20A4AF8700E1B2DF /* AppAttributes.swift */; };
+		E9CB798620A4AF9000E1B2DF /* ChannelDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB798020A4AF8700E1B2DF /* ChannelDetailsModel.swift */; };
+		E9CB798720A4AF9000E1B2DF /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB798120A4AF8700E1B2DF /* Feed.swift */; };
+		E9CB798820A4AF9000E1B2DF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB798220A4AF8700E1B2DF /* Item.swift */; };
+		E9CB798920A4AF9000E1B2DF /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB798320A4AF8700E1B2DF /* Media.swift */; };
 		E9DA8A38209EDF3600C5080F /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA8A36209EDF3200C5080F /* ApiResponse.swift */; };
 		E9DA8A39209EDF3800C5080F /* Boxapi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA8A37209EDF3200C5080F /* Boxapi.swift */; };
 		E9DA8A3B209F0E4900C5080F /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA8A3A209F0E4900C5080F /* HomeManager.swift */; };
@@ -189,6 +195,12 @@
 		E995A43C209A3A81000EB94A /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		E995A449209A3E19000EB94A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9C108D9209B7BBC005A6FF2 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		E9CB797E20A4AF8700E1B2DF /* Appconfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appconfig.swift; sourceTree = "<group>"; };
+		E9CB797F20A4AF8700E1B2DF /* AppAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAttributes.swift; sourceTree = "<group>"; };
+		E9CB798020A4AF8700E1B2DF /* ChannelDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelDetailsModel.swift; sourceTree = "<group>"; };
+		E9CB798120A4AF8700E1B2DF /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		E9CB798220A4AF8700E1B2DF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		E9CB798320A4AF8700E1B2DF /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		E9DA8A36209EDF3200C5080F /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		E9DA8A37209EDF3200C5080F /* Boxapi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxapi.swift; sourceTree = "<group>"; };
 		E9DA8A3A209F0E4900C5080F /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
@@ -609,9 +621,23 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		E9CB797D20A4AF8700E1B2DF /* ChannelDetailsModel */ = {
+			isa = PBXGroup;
+			children = (
+				E9CB797E20A4AF8700E1B2DF /* Appconfig.swift */,
+				E9CB797F20A4AF8700E1B2DF /* AppAttributes.swift */,
+				E9CB798020A4AF8700E1B2DF /* ChannelDetailsModel.swift */,
+				E9CB798120A4AF8700E1B2DF /* Feed.swift */,
+				E9CB798220A4AF8700E1B2DF /* Item.swift */,
+				E9CB798320A4AF8700E1B2DF /* Media.swift */,
+			);
+			path = ChannelDetailsModel;
+			sourceTree = "<group>";
+		};
 		E9DA8A35209EDF2300C5080F /* API */ = {
 			isa = PBXGroup;
 			children = (
+				E9CB797D20A4AF8700E1B2DF /* ChannelDetailsModel */,
 				E98882DC20A0AE6400B0680B /* Channels */,
 				E9DA8A3D209F120200C5080F /* Groups */,
 				E9DA8A3C209F11F100C5080F /* Login */,
@@ -889,6 +915,7 @@
 				6CD8BEC620A0262D006A8AE0 /* AuthenticationVC.swift in Sources */,
 				E98882E020A0AE8700B0680B /* ChannelCategories.swift in Sources */,
 				E92BA08B209B49C60009AAD7 /* ConfirmRule.swift in Sources */,
+				E9CB798620A4AF9000E1B2DF /* ChannelDetailsModel.swift in Sources */,
 				E9DA8A39209EDF3800C5080F /* Boxapi.swift in Sources */,
 				E92BA087209B49B40009AAD7 /* ValidatorDictionary.swift in Sources */,
 				E995A427209A29A8000EB94A /* LoginVC.swift in Sources */,
@@ -902,7 +929,9 @@
 				E92BA089209B49C60009AAD7 /* AlphaRule.swift in Sources */,
 				6CC09D5F209C3D08000671B1 /* CollectionViewCell.swift in Sources */,
 				6CF44C84209ACDD90054C560 /* WTUtils.swift in Sources */,
+				E9CB798820A4AF9000E1B2DF /* Item.swift in Sources */,
 				E92BA088209B49C60009AAD7 /* AlphaNumericRule.swift in Sources */,
+				E9CB798720A4AF9000E1B2DF /* Feed.swift in Sources */,
 				E9DA8A42209F122500C5080F /* Category.swift in Sources */,
 				E92BA08A209B49C60009AAD7 /* CharacterSetRule.swift in Sources */,
 				E92BA09E209B4C6A0009AAD7 /* CommonExtensions.swift in Sources */,
@@ -924,10 +953,13 @@
 				6CC09D58209C2354000671B1 /* HomeVC.swift in Sources */,
 				E92BA097209B49C60009AAD7 /* RegexRule.swift in Sources */,
 				E92BA094209B49C60009AAD7 /* MinLengthRule.swift in Sources */,
+				E9CB798920A4AF9000E1B2DF /* Media.swift in Sources */,
 				E92BA08F209B49C60009AAD7 /* FullNameRule.swift in Sources */,
 				E98882DB20A0A9E300B0680B /* AuthenticationManager.swift in Sources */,
 				E98882E220A0AE8C00B0680B /* ChannelsResponseModel.swift in Sources */,
 				E995A442209A3A81000EB94A /* ResponseProtocol.swift in Sources */,
+				E9CB798420A4AF9000E1B2DF /* Appconfig.swift in Sources */,
+				E9CB798520A4AF9000E1B2DF /* AppAttributes.swift in Sources */,
 				E92BA083209B499D0009AAD7 /* Validator.swift in Sources */,
 				E995A43F209A3A81000EB94A /* Service.swift in Sources */,
 				E9DA8A4A209F744D00C5080F /* ChannelCell.swift in Sources */,

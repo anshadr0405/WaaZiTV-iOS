@@ -12,37 +12,40 @@ import Foundation
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class ChannelCategory {
-	public var id : String?
+public class Item {
 	public var title : String?
 	public var description : String?
 	public var program_name : String?
 	public var program_description : String?
 	public var channelnumber : Int?
 	public var childlock : Int?
-	public var feed_type : String?
-	public var playback_type : String?
-	public var feed_url : String?
 	public var hd_image : String?
 	public var sd_image : String?
 	public var hls_url : String?
+	public var runtime : String?
+	public var contentId : String?
+	public var contentType : String?
+	public var contentQuality : String?
+	public var streamFormat : String?
+	public var playback_type : String?
+	public var media : Media?
 
 /**
     Returns an array of models based on given dictionary.
     
     Sample usage:
-    let category_list = Category.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
+    let item_list = Item.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
 
     - parameter array:  NSArray from JSON dictionary.
 
-    - returns: Array of Category Instances.
+    - returns: Array of Item Instances.
 */
-    public class func modelsFromDictionaryArray(array:NSArray) -> [ChannelCategory]
+    public class func modelsFromDictionaryArray(array:NSArray) -> [Item]
     {
-        var models:[ChannelCategory] = []
+        var models:[Item] = []
         for item in array
         {
-            models.append(ChannelCategory(dictionary: item as! NSDictionary)!)
+            models.append(Item(dictionary: item as! NSDictionary)!)
         }
         return models
     }
@@ -51,27 +54,30 @@ public class ChannelCategory {
     Constructs the object based on the given dictionary.
     
     Sample usage:
-    let category = Category(someDictionaryFromJSON)
+    let item = Item(someDictionaryFromJSON)
 
     - parameter dictionary:  NSDictionary from JSON.
 
-    - returns: Category Instance.
+    - returns: Item Instance.
 */
 	required public init?(dictionary: NSDictionary) {
 
-		id = dictionary["id"] as? String
 		title = dictionary["title"] as? String
 		description = dictionary["description"] as? String
 		program_name = dictionary["program_name"] as? String
 		program_description = dictionary["program_description"] as? String
 		channelnumber = dictionary["channelnumber"] as? Int
 		childlock = dictionary["childlock"] as? Int
-		feed_type = dictionary["feed_type"] as? String
-		playback_type = dictionary["playback_type"] as? String
-		feed_url = dictionary["feed_url"] as? String
 		hd_image = dictionary["hd_image"] as? String
 		sd_image = dictionary["sd_image"] as? String
 		hls_url = dictionary["hls_url"] as? String
+		runtime = dictionary["runtime"] as? String
+		contentId = dictionary["contentId"] as? String
+		contentType = dictionary["contentType"] as? String
+		contentQuality = dictionary["contentQuality"] as? String
+		streamFormat = dictionary["streamFormat"] as? String
+		playback_type = dictionary["playback_type"] as? String
+		if (dictionary["media"] != nil) { media = Media(dictionary: dictionary["media"] as! NSDictionary) }
 	}
 
 		
@@ -84,19 +90,22 @@ public class ChannelCategory {
 
 		let dictionary = NSMutableDictionary()
 
-		dictionary.setValue(self.id, forKey: "id")
 		dictionary.setValue(self.title, forKey: "title")
 		dictionary.setValue(self.description, forKey: "description")
 		dictionary.setValue(self.program_name, forKey: "program_name")
 		dictionary.setValue(self.program_description, forKey: "program_description")
 		dictionary.setValue(self.channelnumber, forKey: "channelnumber")
 		dictionary.setValue(self.childlock, forKey: "childlock")
-		dictionary.setValue(self.feed_type, forKey: "feed_type")
-		dictionary.setValue(self.playback_type, forKey: "playback_type")
-		dictionary.setValue(self.feed_url, forKey: "feed_url")
 		dictionary.setValue(self.hd_image, forKey: "hd_image")
 		dictionary.setValue(self.sd_image, forKey: "sd_image")
 		dictionary.setValue(self.hls_url, forKey: "hls_url")
+		dictionary.setValue(self.runtime, forKey: "runtime")
+		dictionary.setValue(self.contentId, forKey: "contentId")
+		dictionary.setValue(self.contentType, forKey: "contentType")
+		dictionary.setValue(self.contentQuality, forKey: "contentQuality")
+		dictionary.setValue(self.streamFormat, forKey: "streamFormat")
+		dictionary.setValue(self.playback_type, forKey: "playback_type")
+		dictionary.setValue(self.media?.dictionaryRepresentation(), forKey: "media")
 
 		return dictionary
 	}
