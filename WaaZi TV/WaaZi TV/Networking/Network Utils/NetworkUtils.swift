@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 /// Constants define
-public struct Constants {
+public class NetworkUtils {
     
     /// This represent keys used into the Info.plist file of your app.
     /// The root node is `endpoint` with `base`, `pathAPI` and `name` inside which contains
@@ -27,10 +27,34 @@ public struct Constants {
         case name        =    "name"
         case headers    =    "headers"
     }
+    public enum LoginType: String {
+        
+        case Username     =    "username"
+        case Email        =    "registerwithemail"
+        case VoucherCode    =    "registerwithvoucher"
+        
+    }
+    public enum ActionType: String {
     
+        case channels        =    "getchannels"
+        case register        =    "register"
+        case authenticate    =    "authenticate"
+        case groups          =    "getgroups"
+        case channel        =     "getchannel"
+
+    }
     /// Avoid initialization of this (it's just for namingspace purposes)
     private init() {}
-    
+   // getchannel: "https://url?responsetype=json&action=getchannel&id={gid}&mac={mac}",
+
+    public static func getCommonUrlParams(type:ActionType)->NSMutableDictionary{
+        let params = NSMutableDictionary()
+        params.setValue(type.rawValue, forKey: "action")
+        params .setValue("json", forKey: "responsetype")
+        params .setValue("97b08a34ad1b2736", forKey: "mac")
+        return params
+    }
+   
 }
 /// Possible networking error
 ///
@@ -188,4 +212,5 @@ public struct RequestBody {
         }
         return stringRepresentation
     }
+    
 }

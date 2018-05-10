@@ -53,7 +53,7 @@ class VideoPlayerView: NibView {
         videoPlayer = AVPlayer()
         videoPlayer?.actionAtItemEnd = .pause
         videoPlayerLayer = AVPlayerLayer(player: videoPlayer)
-        videoPlayerLayer.frame = CGRect(x: 0, y: 0, width: self.playerView.frame.size.width, height: self.playerView.frame.size.height)
+        videoPlayerLayer.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.playerView.frame.size.height)
         videoPlayerLayer.videoGravity = .resizeAspectFill
         self.layer.addSublayer(videoPlayerLayer!)
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
@@ -64,7 +64,7 @@ class VideoPlayerView: NibView {
         
     override func layoutSubviews() {
          super.layoutSubviews()
-         videoPlayerLayer.frame = CGRect(x: 0, y: 0, width: self.playerView.frame.size.width, height: self.playerView.frame.size.height)
+      videoPlayerLayer.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.playerView.frame.size.height)
         
     }
     
@@ -143,6 +143,7 @@ class VideoPlayerView: NibView {
     }
     
     func reset() {
+     self.videoPlayer?.pause()
         self.videoPlayer?.seek(to: kCMTimeZero)
     }
     

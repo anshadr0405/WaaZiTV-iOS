@@ -37,6 +37,7 @@ public class Service: ServiceProtocol {
 		// Wrap in a promise the request itself
 		let op = Promise<ResponseProtocol>(in: request.context ?? .background, token: request.invalidationToken, { (r, rj, s) in
 			// Attempt to create the object to perform request
+          //  WTUtils.printToConsole(message: try! request.urlRequest(in: self) as! String)
 			let dataOperation: DataRequest = try Alamofire.request(request.urlRequest(in: self))
 			// Execute operation in Alamofire
 			dataOperation.response(completionHandler: { rData in
@@ -45,10 +46,13 @@ public class Service: ServiceProtocol {
 				switch parsedResponse.type {
 				case .success: // success
 					r(parsedResponse)
+                    WTUtils.printToConsole(message: parsedResponse.toString()!)
 				case .error: // failure
 					rj(NetworkError.error(parsedResponse))
+                    WTUtils.printToConsole(message: parsedResponse.toString()!)
 				case .noResponse:  // no response
 					rj(NetworkError.noResponse(parsedResponse))
+                    WTUtils.printToConsole(message: parsedResponse.toString()!)
 				}
 			})
 		})

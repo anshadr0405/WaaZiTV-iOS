@@ -50,15 +50,15 @@ public final class ServiceConfig: CustomStringConvertible, Equatable {
 	public convenience init?() {
 		// Attemp to load the configuration inside the Info.plist of your app.
 		// It must be a dictionary of this type ```{ "endpoint" : { "base" : "host.com", path : "api/v2" } }```
-		let appCfg = JSON(Bundle.main.object(forInfoDictionaryKey: Constants.ServerConfig.endpoint.rawValue) as Any)
-		guard let base = appCfg[Constants.ServerConfig.base.rawValue].string else {
+		let appCfg = JSON(Bundle.main.object(forInfoDictionaryKey: NetworkUtils.ServerConfig.endpoint.rawValue) as Any)
+		guard let base = appCfg[NetworkUtils.ServerConfig.base.rawValue].string else {
 			return nil
 		}
 		// Initialize with parameters
-		self.init(name: appCfg[Constants.ServerConfig.name.rawValue].stringValue, base: base)
+		self.init(name: appCfg[NetworkUtils.ServerConfig.name.rawValue].stringValue, base: base)
 		
 		// Attempt to read a fixed list of headers from configuration
-		if let fixedHeaders = appCfg[Constants.ServerConfig.headers.rawValue].dictionaryObject as? HeadersDict {
+		if let fixedHeaders = appCfg[NetworkUtils.ServerConfig.headers.rawValue].dictionaryObject as? HeadersDict {
 			self.headers = fixedHeaders
 		}
 	}

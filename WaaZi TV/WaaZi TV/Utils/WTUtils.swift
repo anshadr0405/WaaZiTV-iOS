@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Foundation
+import Security
 class WTUtils: NSObject {
    public static func getMenuJsonArrayWithFileName(filename:String) -> [MenuModel]{
     var dataDict:NSDictionary = NSDictionary()
@@ -22,4 +23,34 @@ class WTUtils: NSObject {
         }
         return MenuModel.modelsFromDictionaryArray(array: dataDict[filename]as! NSArray)
     }
+  
+    public static func getUUID() ->String{
+        let accountName = "WaaziTVUser"
+        let keychain = Keychain(service: "WaaziTV")
+        var applicationUUID = keychain[accountName]
+        
+        if applicationUUID == nil {
+            
+            applicationUUID = UIDevice.current.identifierForVendor?.uuidString
+            
+            // Save applicationUUID in keychain without synchronization
+            do {
+                try keychain.set(applicationUUID!, key: applicationUUID!)
+            }
+            catch let error {
+                print(error)
+            }
+            
+        }
+        print(applicationUUID!)
+        return applicationUUID!
+    }
+        static func printToConsole(file:String = #file,functionName: String = #function, message:String) {
+        
+            
+            let urlStr : NSString = file.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! as NSString
+            print("\n \(NSURL(string: urlStr as String)!.lastPathComponent!)::\(functionName)::\(message) \n")
+        }
+        
+    
 }

@@ -10,17 +10,51 @@ import UIKit
 
 class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
+    var channelCategories:[ChannelCategory]?
+    var category:Category?
+    var manager:HomeManager = HomeManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-      setupCollectionView()
-        // Do any additional setup after loading the view.
+       setupCollectionView()
+       
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+            getChannelsFromApi()
+        
+    }
+    func getChannelsFromApi() {
+        manager.getChannelsService(categoryId:self.category?.id ?? "" ) { (status,response,errorMessage) in
+            if status == .loading{
+               APP_DELEGATE.showFullScreenLoadingIndicator()
+            }
+            else if status == .success{
+                DispatchQueue.main.async {
+                    let channelsResponse = response as! ChannelsResponseModel
+                    self.channelCategories = channelsResponse.categories?.category
+                    self.collectionView.isHidden = false
+                    self.collectionView.reloadData()
+                    APP_DELEGATE.hideFullScreenLoadingIndicator()
+                }
+    
+            }
+            else{
+               APP_DELEGATE.hideFullScreenLoadingIndicator()
+              
+              
+                
+            }
+            
+        }
+    }
+    
     
     func setupCollectionView() {
         collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
+        self.messageLabel.isHidden = true
+        self.collectionView.isHidden = true
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -31,19 +65,27 @@ class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 30
+        if  (self.channelCategories != nil) {
+            return (self.channelCategories?.count)!
+        }
+        else{
+            return 0
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-        
+         let channelCategory = self.channelCategories?[indexPath.row]
+         cell.titleLabel.text = channelCategory?.title
+        cell.thumbNailImageView.sd_setImage(with: URL.init(string: (channelCategory?.hd_image)!), completed: nil)
         return cell
 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        self.navigate(identifier: "DetailsVC")
+        let detailsVC:DetailsVC = storyboard?.instantiateViewController(withIdentifier: "DetailsVC") as! DetailsVC
+        let channelCategory = self.channelCategories?[indexPath.row]
+        detailsVC.selectedChannel = channelCategory
+        self.navigationController?.pushViewController(detailsVC, animated: true)
     }
     
     @available(iOS 11.0, *)

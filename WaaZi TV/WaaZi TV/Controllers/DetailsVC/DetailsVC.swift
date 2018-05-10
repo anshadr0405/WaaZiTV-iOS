@@ -9,36 +9,68 @@
 import UIKit
 import AVKit
 class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,PlayerDelegate {
-   
-    
-
+    var manager:HomeManager = HomeManager()
+    var channelDetailsModel:ChannelDetailsModel?
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     var videoPlayerView:VideoPlayerView?
-    
+    var selectedChannel:ChannelCategory?
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        setupViews()
+        getChannelDetails()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupCollectionView()
-        setupViews()
-
-        // Do any additional setup after loading the view.
+       }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.videoPlayerView?.reset()
+    }
+    func getChannelDetails() {
+        manager.getChannelService(categoryId:selectedChannel?.id ?? "" ) { (status,response,errorMessage) in
+            if status == .loading{
+                APP_DELEGATE.showFullScreenLoadingIndicator()
+            }
+            else if status == .success{
+                DispatchQueue.main.async {
+                    self.channelDetailsModel = response as? ChannelDetailsModel
+                    let channel = self.channelDetailsModel?.feed?.item?.first
+                     self.setUpPlayer(chanelModel: channel)
+                    self.collectionView.isHidden = false
+                     self.playerView.isHidden = false
+                    self.collectionView.reloadData()
+                    APP_DELEGATE.hideFullScreenLoadingIndicator()
+                }
+                
+            }
+            else{
+                APP_DELEGATE.hideFullScreenLoadingIndicator()
+                
+                
+                
+            }
+            
+        }
     }
     func setupViews(){
-        videoPlayerView = VideoPlayerView.init(frame: self.playerView.frame)
+        
+      let rect = CGRect.init(x: self.playerView.frame.origin.x, y: self.playerView.frame.origin.y, width: self.view.frame.size.width, height: self.playerView.frame.size.height)
+        videoPlayerView = VideoPlayerView.init(frame: rect)
         videoPlayerView?.delegate  = self
         self.playerView.addSubview(videoPlayerView!)
-        let url:URL = URL.init(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4")!
-        videoPlayerView?.setVideo(url)
-        videoPlayerView?.play()
-        
+        self.collectionView.isHidden = true
+         self.playerView.isHidden = true
     }
    
-    
+    func setUpPlayer(chanelModel:Item?) {
+        let url:URL = URL.init(string:(chanelModel?.hls_url)!)!
+        videoPlayerView?.setVideo(url)
+        videoPlayerView?.play()
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -54,7 +86,7 @@ class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICo
 //        self.view.layoutSubviews()
 //        videoPlayerView?.layoutIfNeeded()
         
-        let value = UIInterfaceOrientation.landscapeRight.rawValue
+    let value = UIInterfaceOrientation.landscapeRight.rawValue
        UIDevice.current.setValue(value, forKey: "orientation")
     }
     func setupCollectionView() {
@@ -66,11 +98,14 @@ class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICo
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 30
+        
+        return (self.channelDetailsModel?.feed?.item?.count) ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-        
+        let item = self.channelDetailsModel?.feed?.item?[indexPath.row]
+        cell.titleLabel.text = item?.title
+        cell.thumbNailImageView.sd_setImage(with: URL.init(string: (item?.hd_image)!), completed: nil)
         return cell
         
     }

@@ -2,27 +2,39 @@
     "slide_menu": [
                    {
                    "id": 0,
-                   "title": "Home",
-                   "destination_id": "MainTabBarVC",
-                   "image": "home_icon"
+                   "title": "Live TV",
+                   "destination_id": "HomeVC",
+                   "image": "home_icon",
+                   "isCollapsed": true,
+                   "isCollapsible": true,
+                   "rowCount": 0
                    },
                    {
                    "id": 1,
                    "title": "Client Information",
                    "destination_id": "ClientInfoVC",
-                   "image": "clientinfo_icon"
+                   "image": "clientinfo_icon",
+                   "isCollapsed": true,
+                   "isCollapsible": false,
+                   "rowCount": 0
                    },
                    {
                    "id": 2,
                    "title": "Check Update",
                    "destination_id": "ClientInfoVC",
-                   "image": "checkupdate_icon"
+                   "image": "checkupdate_icon",
+                   "isCollapsed": true,
+                   "isCollapsible": false,
+                   "rowCount": 0
                    },
                    {
                    "id": 3,
                    "title": "Logout",
                    "destination_id": "ClientInfoVC",
-                   "image": "logout_icon"
+                   "image": "logout_icon",
+                   "isCollapsed": true,
+                   "isCollapsible": false,
+                   "rowCount": 0
                    }
                    ]
 }

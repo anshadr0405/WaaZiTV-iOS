@@ -24,6 +24,12 @@ public extension UIView{
     }
 }
 
+public extension Int{
+    
+    func toString() -> String {
+        return String(self) 
+    }
+}
 class NibView: UIView {
     var view: UIView!
     override init(frame: CGRect) {
