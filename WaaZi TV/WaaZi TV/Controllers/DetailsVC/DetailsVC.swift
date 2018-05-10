@@ -84,10 +84,12 @@ class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICo
     func fullScreenButtonClicked() {
 //        videoPlayerView?.frame = self.view.frame
 //        self.view.layoutSubviews()
-//        videoPlayerView?.layoutIfNeeded()
+
         
     let value = UIInterfaceOrientation.landscapeRight.rawValue
        UIDevice.current.setValue(value, forKey: "orientation")
+        videoPlayerView?.layoutIfNeeded()
+        self.playerView.layoutSubviews()
     }
     func setupCollectionView() {
         collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")

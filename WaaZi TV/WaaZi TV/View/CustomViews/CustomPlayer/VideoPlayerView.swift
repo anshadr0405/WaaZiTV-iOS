@@ -64,7 +64,7 @@ class VideoPlayerView: NibView {
         
     override func layoutSubviews() {
          super.layoutSubviews()
-      videoPlayerLayer.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.playerView.frame.size.height)
+        videoPlayerLayer.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
         
     }
     
