@@ -24,6 +24,11 @@ public extension UIView{
     }
 }
 
+extension AppDelegate{
+    func changeRootViewController(viewController:UIViewController){
+        window?.rootViewController = viewController
+    }
+}
 public extension Int{
     
     func toString() -> String {

@@ -42,7 +42,6 @@ class WTUtils: NSObject {
             }
             
         }
-        print(applicationUUID!)
         return applicationUUID!
     }
         static func printToConsole(file:String = #file,functionName: String = #function, message:String) {

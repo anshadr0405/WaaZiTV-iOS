@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -75,9 +74,22 @@
                                     <constraint firstAttribute="height" constant="128" id="pot-nI-xMU"/>
                                 </constraints>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBQ-nO-m4u">
+                                <rect key="frame" x="126" y="417" width="122" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Login Again?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginAgainButtonClicked:" destination="ado-rm-TAm" eventType="touchUpInside" id="P1d-C0-5DI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="WBQ-nO-m4u" firstAttribute="centerX" secondItem="zja-jw-JfK" secondAttribute="centerX" id="LCt-Ok-m3V"/>
+                            <constraint firstItem="WBQ-nO-m4u" firstAttribute="top" secondItem="kLy-EQ-NHm" secondAttribute="bottom" constant="20" id="dvV-dI-HYL"/>
                             <constraint firstItem="kLy-EQ-NHm" firstAttribute="centerX" secondItem="zja-jw-JfK" secondAttribute="centerX" id="fpJ-Oc-WdL"/>
                             <constraint firstItem="kLy-EQ-NHm" firstAttribute="centerY" secondItem="zja-jw-JfK" secondAttribute="centerY" id="jtx-uR-fR6"/>
                         </constraints>
@@ -85,6 +97,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="z6s-Rr-Lot" id="Kzo-XQ-tCP"/>
                         <outlet property="centerView" destination="kLy-EQ-NHm" id="mcV-5a-PxP"/>
+                        <outlet property="loginAgainButton" destination="WBQ-nO-m4u" id="q50-Ue-4Pp"/>
                         <outlet property="messageLabel" destination="Vok-sf-W5y" id="mzJ-2j-huQ"/>
                     </connections>
                 </viewController>
@@ -535,7 +548,7 @@
         <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="WaaZi_TV" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginVC" customModule="WaaZi_TV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uPd-lp-bJg"/>
                         <viewControllerLayoutGuide type="bottom" id="hxf-CQ-I0c"/>
@@ -615,21 +628,39 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="dXt-bo-son"/>
                                         </connections>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIN-61-2lY">
+                                        <rect key="frame" x="337" y="11" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI5-za-KLx">
+                                        <rect key="frame" x="345" y="51" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="QSd-IQ-IoS" firstAttribute="top" secondItem="qI5-za-KLx" secondAttribute="bottom" constant="4" id="4Qv-tb-7ry"/>
                                     <constraint firstAttribute="trailing" secondItem="mHZ-zV-gDa" secondAttribute="trailing" id="4jU-jS-KJs"/>
+                                    <constraint firstAttribute="trailing" secondItem="MIN-61-2lY" secondAttribute="trailing" constant="8" id="77V-br-kp8"/>
                                     <constraint firstAttribute="trailing" secondItem="QSd-IQ-IoS" secondAttribute="trailing" id="88e-Vk-RPH"/>
+                                    <constraint firstAttribute="trailing" secondItem="qI5-za-KLx" secondAttribute="trailing" id="BwP-UI-1ZH"/>
                                     <constraint firstItem="QSd-IQ-IoS" firstAttribute="leading" secondItem="qo7-6m-Ajh" secondAttribute="leading" id="EvQ-Pu-7jo"/>
                                     <constraint firstAttribute="bottom" secondItem="yZm-jg-KE4" secondAttribute="bottom" constant="15" id="PPD-Tk-naO"/>
                                     <constraint firstItem="yZm-jg-KE4" firstAttribute="width" secondItem="QSd-IQ-IoS" secondAttribute="width" multiplier="0.4" id="UpG-O8-pXo"/>
+                                    <constraint firstItem="qI5-za-KLx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qo7-6m-Ajh" secondAttribute="leading" constant="20" symbolic="YES" id="V6G-zi-yxu"/>
                                     <constraint firstItem="QSd-IQ-IoS" firstAttribute="height" secondItem="mHZ-zV-gDa" secondAttribute="height" id="WEA-NO-2h3"/>
                                     <constraint firstAttribute="bottom" secondItem="yZm-jg-KE4" secondAttribute="bottom" constant="8" id="Xha-Fn-aDE"/>
                                     <constraint firstItem="yZm-jg-KE4" firstAttribute="top" secondItem="QSd-IQ-IoS" secondAttribute="bottom" constant="45" id="Y02-2d-pok"/>
                                     <constraint firstItem="mHZ-zV-gDa" firstAttribute="top" secondItem="qo7-6m-Ajh" secondAttribute="top" constant="15" id="bg0-HN-Weq"/>
                                     <constraint firstItem="QSd-IQ-IoS" firstAttribute="top" secondItem="mHZ-zV-gDa" secondAttribute="bottom" constant="15" id="cc6-k0-zDZ"/>
                                     <constraint firstItem="mHZ-zV-gDa" firstAttribute="leading" secondItem="qo7-6m-Ajh" secondAttribute="leading" id="eI9-ex-CQb"/>
+                                    <constraint firstItem="MIN-61-2lY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qo7-6m-Ajh" secondAttribute="leading" constant="20" symbolic="YES" id="sHX-ux-x0e"/>
                                     <constraint firstItem="yZm-jg-KE4" firstAttribute="centerX" secondItem="qo7-6m-Ajh" secondAttribute="centerX" id="xSH-u8-vRQ"/>
+                                    <constraint firstItem="mHZ-zV-gDa" firstAttribute="top" secondItem="MIN-61-2lY" secondAttribute="bottom" constant="4" id="z7u-5h-IQI"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -659,14 +690,16 @@
                     <navigationItem key="navigationItem" id="AdZ-Fl-CJF"/>
                     <connections>
                         <outlet property="loginButton" destination="yZm-jg-KE4" id="XJ0-FY-gxe"/>
+                        <outlet property="passwordErrorLabel" destination="qI5-za-KLx" id="1o1-gc-wO0"/>
                         <outlet property="passwordField" destination="QSd-IQ-IoS" id="Mh2-QA-dz5"/>
                         <outlet property="segmentController" destination="xCH-ni-eoa" id="ylj-YV-Ny1"/>
+                        <outlet property="userNameErrorLabel" destination="MIN-61-2lY" id="Duf-iu-Tlw"/>
                         <outlet property="userNameField" destination="mHZ-zV-gDa" id="DaK-lR-4NP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5543" y="-1229"/>
+            <point key="canvasLocation" x="-5543.1999999999998" y="-1229.2353823088456"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="59F-2Y-Pzu">

@@ -8,25 +8,66 @@
 
 import UIKit
 import LGSideMenuController
+
 class LoginVC: BaseVC {
     @IBOutlet weak var passwordField: WTTextField!
-    
     @IBOutlet weak var userNameField: WTTextField!
        @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var segmentController: UISegmentedControl!
+    
+    @IBOutlet weak var userNameErrorLabel: UILabel!
+    
+    @IBOutlet weak var passwordErrorLabel: UILabel!
+    var loginType:LoginType = LoginType.Username
     var manager:LoginManager = LoginManager.init()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userNameField.text = "12755"
         self.passwordField.text = "542717"
-    }
- 
-    
-    @IBAction func segmentSelected(_ sender: Any) {
+       // setupView()
+
         
     }
+ 
+    func setupView()  {
+           validator.registerField(userNameField, errorLabel: userNameErrorLabel, rules: [RequiredRule()])
+             validator.registerField(passwordField, errorLabel: passwordErrorLabel, rules: [RequiredRule()])
+    }
+    
+    
+    @IBAction func segmentSelected(_ sender: Any) {
+        let segment:UISegmentedControl = sender as! UISegmentedControl
+        let selectedIndex = segment.selectedSegmentIndex
+        switch selectedIndex {
+        case 0:
+              self.userNameField.isHidden = false
+              self.userNameField.placeholder = "Username"
+              self.passwordField.placeholder = "Password"
+              loginType = LoginType.Username
+              
+            break
+        case 1:
+              self.userNameField.isHidden = false
+              self.userNameField.placeholder = "Email"
+              self.passwordField.placeholder = "Password"
+              loginType = LoginType.Email
+
+            break
+        case 2:
+               self.passwordField.placeholder = "Voucher Code"
+                self.userNameField.isHidden = true
+               loginType = LoginType.VoucherCode
+
+            break
+       
+        default:
+            
+            break
+        }
+    }
     @IBAction func loginButtonClicked(_ sender: Any) {
-        manager.registerUser(loginType: .Username, userName: self.userNameField.text!, passWord: self.passwordField.text!) { (status,response,errorMessage) in
+        //self.validate()
+        manager.registerUser(loginType:loginType, userName: self.userNameField.text!, passWord: self.passwordField.text!) { (status,response,errorMessage) in
             if status == .loading{
                 APP_DELEGATE.showFullScreenLoadingIndicator()
             }
@@ -35,10 +76,9 @@ class LoginVC: BaseVC {
                 self.loadAuthenticationVC()
             }
             else{
-               APP_DELEGATE.hideFullScreenLoadingIndicator()
-               self.loadAuthenticationVC()
+                APP_DELEGATE.hideFullScreenLoadingIndicator()
+                self.loadAuthenticationVC()
                 print(errorMessage ?? "Login failed")
-
             }
             
         }
@@ -57,6 +97,25 @@ class LoginVC: BaseVC {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "AuthenticationVC") as! AuthenticationVC
         UIApplication.shared.keyWindow?.rootViewController = viewController
     }
+    
+    
+    override func validationSuccessful() {
+        print("test")
+       
+    }
+    
+    override func validationFailed(_ errors: [(Validatable, ValidationError)]) {
+        print("test")
+        for (field, error) in errors {
+            if let field = field as? UITextField {
+                field.layer.borderColor = UIColor.red.cgColor
+                field.layer.borderWidth = 1.0
+            }
+            error.errorLabel?.text = error.errorMessage // works if you added labels
+            error.errorLabel?.isHidden = false
+        }
+    }
+    
 }
 
 

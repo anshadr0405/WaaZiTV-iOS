@@ -10,12 +10,6 @@ import Foundation
 
 class LoginManager :BaseManager {
     static let sharedInstance = LoginManager()
-    public enum LoginType: String {
-        case Username     =    "username"
-        case Email        =    "registerwithemail"
-        case VoucherCode    =    "registerwithvoucher"
-        
-    }
     func registerUser(loginType:LoginType,userName:String,passWord:String,completion:@escaping Completion){
         completion(.loading, nil, nil)
 
@@ -32,6 +26,8 @@ class LoginManager :BaseManager {
             break
         case .VoucherCode:
             params.setValue(passWord, forKey: "voucher")
+            break
+        case .None:
             break
         }
         

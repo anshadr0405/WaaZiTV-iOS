@@ -46,6 +46,7 @@ class LeftMenuController: BaseVC,CategoryViewModelDelegate {
     
   
     func didSelectCategory(category: Category, atIndexPath: IndexPath) {
+        
         sideMenuController!.hideLeftViewAnimated()
         let navigationController:UINavigationController =  sideMenuController!.rootViewController as! UINavigationController
         let destinationVC:HomeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
@@ -56,7 +57,13 @@ class LeftMenuController: BaseVC,CategoryViewModelDelegate {
     
     func didSelectSection(menuItem: HeaderModel, atSection: Int) {
         if(!menuItem.isCollapsible!){
-            self.navigateToItem(item: menuItem)
+            if menuItem.title == "Logout"{
+                NavigationManager.sharedInstance.setRootAsLoginVC()
+            }
+            else{
+                self.navigateToItem(item: menuItem)
+
+            }
 
         }
         

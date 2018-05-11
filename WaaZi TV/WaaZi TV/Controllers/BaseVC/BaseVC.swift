@@ -8,7 +8,15 @@
 
 import UIKit
 
-class BaseVC: UIViewController {
+class BaseVC: UIViewController,ValidationDelegate {
+    func validationSuccessful() {
+        
+    }
+    
+    func validationFailed(_ errors: [(Validatable, ValidationError)]) {
+        
+    }
+    
     let validator = Validator()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,5 +31,9 @@ class BaseVC: UIViewController {
      let destinationVC:BaseVC = self.storyboard?.instantiateViewController(withIdentifier: identifier) as! BaseVC
             self.navigationController?.pushViewController(destinationVC, animated: true)
 
+    }
+    
+    func validate() {
+        validator.validate(self)
     }
 }
