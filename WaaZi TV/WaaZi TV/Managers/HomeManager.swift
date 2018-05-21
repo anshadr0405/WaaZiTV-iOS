@@ -10,6 +10,7 @@ import Foundation
 class HomeManager:BaseManager{
     static let sharedInstance = HomeManager()
     var LiveTVCategories : [Category]?
+    
     func getGroupsService(completion:@escaping Completion){
         completion(.loading, nil, nil)
         let params = NetworkUtils.getCommonUrlParams(type: .groups)
@@ -57,9 +58,9 @@ class HomeManager:BaseManager{
             
         }
         else{
-            params.setValue("158", forKey: "id")
+            WTUtils.printToConsole(message: "Category id missing")
         }
-        params.setValue("14", forKey: "id")
+       
         let config = ServiceConfig.appConfig()
         let getChannelsService:Service = Service(config!)
         let getChannelsRequest:Request = Request(method: .get, endpoint: "", params: nil, fields:params as? ParametersDict , body: nil)

@@ -15,14 +15,17 @@ class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     @IBOutlet weak var collectionView: UICollectionView!
     var channelCategories:[ChannelCategory]?
     var category:Category?
-    var manager:HomeManager = HomeManager()
+    var manager:HomeManager = HomeManager.sharedInstance
     override func viewDidLoad() {
         super.viewDidLoad()
-       setupCollectionView()
+        setupCollectionView()
        
     }
     override func viewWillAppear(_ animated: Bool) {
-            getChannelsFromApi()
+        if self.category == nil{
+         category = manager.LiveTVCategories?.first
+        }
+          getChannelsFromApi()
         
     }
     func getChannelsFromApi() {

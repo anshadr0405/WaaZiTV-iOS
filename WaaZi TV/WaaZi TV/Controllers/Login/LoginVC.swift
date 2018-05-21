@@ -77,8 +77,9 @@ class LoginVC: BaseVC {
             }
             else{
                 APP_DELEGATE.hideFullScreenLoadingIndicator()
-                self.loadAuthenticationVC()
-                print(errorMessage ?? "Login failed")
+//                AlertManager.sharedInstance.showAlert(title: nil, message: "Incorrect Username or Password", vc: self)
+//                print(errorMessage ?? "Login failed")
+                  self.loadAuthenticationVC()
             }
             
         }

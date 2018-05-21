@@ -63,7 +63,7 @@ class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICo
         videoPlayerView?.delegate  = self
         self.playerView.addSubview(videoPlayerView!)
         self.collectionView.isHidden = true
-         self.playerView.isHidden = true
+       self.playerView.isHidden = true
     }
    
     func setUpPlayer(chanelModel:Item?) {

@@ -70,10 +70,15 @@ class AuthenticationVC: UIViewController {
 }
     @IBAction func loginAgainButtonClicked(_ sender: Any) {
         
-        
+        loadLoginVC()
     }
     func loadHomeVC() {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "LGSideMenuController") as! LGSideMenuController
+        UIApplication.shared.keyWindow?.rootViewController = viewController
+    }
+    
+    func loadLoginVC() {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
         UIApplication.shared.keyWindow?.rootViewController = viewController
     }
 }

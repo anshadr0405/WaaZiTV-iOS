@@ -12,7 +12,7 @@ import SDWebImage
 protocol CategoryViewModelDelegate: class {
     func didSelectCategory(category:Category,atIndexPath:IndexPath)
     func didSelectSection(menuItem:HeaderModel,atSection:Int)
-    
+ 
     
 }
 class  HeaderModel:MenuModel {
@@ -30,7 +30,8 @@ class  HeaderModel:MenuModel {
 class CategoryViewModel: NSObject {
     var items = [HeaderModel]()
     weak var delegate: CategoryViewModelDelegate?
-
+    var ClientInfoModel :Category?
+    var EPGModel :Category?
     var reloadSections: ((_ section: Int) -> Void)?
     
     override init() {
@@ -39,6 +40,8 @@ class CategoryViewModel: NSObject {
         for item in menuItems{
             let headerModel:HeaderModel = HeaderModel.init(dictionary: item.dictionaryRepresentation())!
             if (item.isCollapsible! && item.title == "Live TV"){
+                EPGModel = HomeManager.sharedInstance.LiveTVCategories?.popLast()
+                ClientInfoModel = HomeManager.sharedInstance.LiveTVCategories?.popLast()
                 headerModel.categories = HomeManager.sharedInstance.LiveTVCategories
             }
             items.append(headerModel)
