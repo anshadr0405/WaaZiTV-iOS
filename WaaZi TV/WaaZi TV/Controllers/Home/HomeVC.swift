@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UISearchBarDelegate {
 
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -19,7 +19,7 @@ class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-       
+     searchBar.delegate = self
     }
     override func viewWillAppear(_ animated: Bool) {
         if self.category == nil{
@@ -112,5 +112,25 @@ class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
+    }
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        
+    }
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        return true
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+       
+        if (searchText.characters.count>2){
+            self.channelCategories = manager.searchChannels(searchText, self.channelCategories!)
+            self.collectionView.reloadData()
+            
+        }
+        
     }
 }

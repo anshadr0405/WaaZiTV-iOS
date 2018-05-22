@@ -34,7 +34,7 @@ class LoginManager :BaseManager {
         let config = ServiceConfig.appConfig()
         let loginService:Service = Service(config!)
         let loginRequest:Request = Request(method: .get, endpoint: "", params: nil, fields:params as? ParametersDict , body: nil)
-        loginService.execute(loginRequest, retry: 0).then( { response in
+        loginService.execute(loginRequest, retry: 3).then( { response in
             
             let responseDict = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as! [String: Any]
             let apiResponse = ApiResponse.init(dictionary:responseDict as NSDictionary)

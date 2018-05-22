@@ -138,4 +138,16 @@ class HomeManager:BaseManager{
             
         })
     }
+    
+    func searchChannels(_ searchKey:String,_ items:[ChannelCategory]) -> [ChannelCategory] {
+        
+        var filteredItems = [ChannelCategory]()
+        if searchKey.characters.count > 0 {
+            //let searchPredicate: NSPredicate = NSPredicate(format: "title contains[cd] %@ || program_name contains[cd] %@" , searchKey, searchKey)
+            filteredItems =  items.filter {($0.title?.contains(searchKey))! }
+
+        }
+        return filteredItems
+    }
+
 }

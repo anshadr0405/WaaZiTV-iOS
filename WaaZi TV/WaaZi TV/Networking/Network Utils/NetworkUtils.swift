@@ -40,7 +40,8 @@ public class NetworkUtils {
         case register        =    "register"
         case authenticate    =    "authenticate"
         case groups          =    "getgroups"
-        case channel        =     "getchannel"
+        case channel         =     "getchannel"
+       case getclientinfo    =     "getclientinfo"
 
     }
     /// Avoid initialization of this (it's just for namingspace purposes)
@@ -51,7 +52,7 @@ public class NetworkUtils {
         let params = NSMutableDictionary()
         params.setValue(type.rawValue, forKey: "action")
         params .setValue("json", forKey: "responsetype")
-        params .setValue("97b08a34ad1b2736", forKey: "mac")
+        params .setValue(WTUtils.getUUID(), forKey: "mac")
         return params
     }
    

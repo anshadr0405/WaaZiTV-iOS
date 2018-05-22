@@ -85,10 +85,19 @@
                                     <action selector="loginAgainButtonClicked:" destination="ado-rm-TAm" eventType="touchUpInside" id="P1d-C0-5DI"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="44O-vh-mux">
+                                <rect key="frame" x="137.5" y="129.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="DGz-ng-Gaz"/>
+                                    <constraint firstAttribute="width" constant="100" id="eyv-Ab-lWq"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="44O-vh-mux" firstAttribute="centerX" secondItem="zja-jw-JfK" secondAttribute="centerX" id="244-6M-yYN"/>
                             <constraint firstItem="WBQ-nO-m4u" firstAttribute="centerX" secondItem="zja-jw-JfK" secondAttribute="centerX" id="LCt-Ok-m3V"/>
+                            <constraint firstItem="kLy-EQ-NHm" firstAttribute="top" secondItem="44O-vh-mux" secondAttribute="bottom" constant="40" id="b4g-JD-TB2"/>
                             <constraint firstItem="WBQ-nO-m4u" firstAttribute="top" secondItem="kLy-EQ-NHm" secondAttribute="bottom" constant="20" id="dvV-dI-HYL"/>
                             <constraint firstItem="kLy-EQ-NHm" firstAttribute="centerX" secondItem="zja-jw-JfK" secondAttribute="centerX" id="fpJ-Oc-WdL"/>
                             <constraint firstItem="kLy-EQ-NHm" firstAttribute="centerY" secondItem="zja-jw-JfK" secondAttribute="centerY" id="jtx-uR-fR6"/>
@@ -233,7 +242,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0PC-tc-5Bp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="JZa-Yo-nO4">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="JZa-Yo-nO4">
                                         <rect key="frame" x="142.5" y="43" width="90" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="1pp-Q8-vkD"/>
@@ -1015,6 +1024,6 @@ AMIA2QDbAN1Bv0HEQc9B2EHrQe9B+kIDQghCEEITQhhCJ0IrQjJCOkJHQkxCTkJQQlVCXUJgQmVCbUJw
 QoJChUKKAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAQow
 </mutableData>
         </image>
-        <image name="logo" width="60" height="60"/>
+        <image name="logo" width="90" height="90"/>
     </resources>
 </document>

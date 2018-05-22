@@ -87,7 +87,8 @@ extension CategoryViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderView.identifier) as? HeaderView {
             let item = items[section]
-            headerView.item = item 
+            headerView.item = item
+            headerView.imageView.image = UIImage.init(named: item.image!)
             headerView.section = section
             headerView.delegate = self
             headerView.rightArrow?.isHidden = !item.isCollapsible!
@@ -120,8 +121,6 @@ extension CategoryViewModel: HeaderViewDelegate {
         delegate?.didSelectSection(menuItem: item, atSection: section)
         
     }
-    
-    
 }
 
 

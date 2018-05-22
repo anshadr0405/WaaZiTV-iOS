@@ -9,7 +9,7 @@
 import Foundation
 class AuthenticationManager: BaseManager {
       static let sharedInstance = AuthenticationManager()
-    
+    var clinetInformation:ClientInfoModel?
     func userAuthentiationService(completion:@escaping Completion){
         completion(.loading, nil, nil)
         let params = NetworkUtils.getCommonUrlParams(type: .authenticate)
@@ -43,5 +43,39 @@ class AuthenticationManager: BaseManager {
             
         })
     }
-    
+    func getClientInfoService(completion:@escaping Completion){
+        completion(.loading, nil, nil)
+        let params = NetworkUtils.getCommonUrlParams(type: .getclientinfo)
+        
+        let config = ServiceConfig.appConfig()
+        let clientInfoService:Service = Service(config!)
+        let clientInfoRequest:Request = Request(method: .get, endpoint: "", params: nil, fields:params as? ParametersDict , body: nil)
+        clientInfoService.execute(clientInfoRequest, retry: 5).then( { response in
+            let responseDict = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as! [String: Any]
+            let apiResponse = ClientInfoModel.init(dictionary:responseDict as NSDictionary)
+            
+            if (apiResponse?.result == "success"){
+                DispatchQueue.main.async {
+                    self.clinetInformation = apiResponse 
+                    completion(.success, apiResponse as AnyObject, nil)
+
+                }
+            }
+            else {
+
+                DispatchQueue.main.async {
+                    completion(.error, nil, apiResponse?.message)
+
+                }
+            }
+            
+        }).catch({ err in
+            
+            DispatchQueue.main.async {
+                completion(.error,nil,err.localizedDescription )
+                
+            }
+            
+        })
+    }
 }

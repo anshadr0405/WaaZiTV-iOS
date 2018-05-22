@@ -38,25 +38,42 @@ class AuthenticationVC: UIViewController {
                self.messageLabel.text = "Verifying User.."
             }
             else if status == .success{
-                  self.messageLabel.text = "User Verification Completed"
-                self.homeManager.getGroupsService(completion: { (status, response, errorMessage) in
+                self.messageLabel.text = "User Verification Completed"
+                self.authenticationManager.getClientInfoService(completion: { (status, response, errorMessage) in
                     if status == .loading{
                         self.messageLabel.text = "Fetching UserData.."
                     }
-                    else if status == .success{
-                        self.activityIndicator.stopAnimating()
-                        self.messageLabel.text = "Done.."
-                        self.loadHomeVC()
-                        
+                     else if status == .success{
+                        self.homeManager.getGroupsService(completion: { (status, response, errorMessage) in
+                            if status == .loading{
+                                // self.messageLabel.text = "Fetching UserData.."
+                            }
+                            else if status == .success{
+                                self.activityIndicator.stopAnimating()
+                                self.messageLabel.text = "Done.."
+                                self.loadHomeVC()
+                                
+                            }
+                            else{
+                                self.activityIndicator.stopAnimating()
+                                self.activityIndicator.isHidden = true
+                                self.messageLabel.text = "Oops!! Something went wrong.."
+                                self.loginAgainButton.isHidden = false
+                                
+                            }
+                        })
+                    
                     }
                     else{
                         self.activityIndicator.stopAnimating()
                         self.activityIndicator.isHidden = true
-                         self.messageLabel.text = "Oops!! Something went wrong.."
-                         self.loginAgainButton.isHidden = false
-
+                        self.messageLabel.text = "Oops!! Something went wrong.."
+                        self.loginAgainButton.isHidden = false
+                        
                     }
                 })
+                
+                
             }
             else{
                 self.activityIndicator.stopAnimating()

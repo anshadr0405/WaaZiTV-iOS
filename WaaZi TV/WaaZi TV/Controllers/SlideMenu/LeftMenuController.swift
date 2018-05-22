@@ -28,7 +28,8 @@ class LeftMenuController: BaseVC,CategoryViewModelDelegate {
             self?.tableView?.reloadSections([section], with: .fade)
             self?.tableView?.endUpdates()
         }
-        
+        nameLabel.text = AuthenticationManager.sharedInstance.clinetInformation?.client?.fullname
+        emailLabel.text = AuthenticationManager.sharedInstance.clinetInformation?.client?.email
         tableView?.estimatedRowHeight = 100
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.sectionHeaderHeight = 70

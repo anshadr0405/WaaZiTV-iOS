@@ -22,8 +22,8 @@ class LoginVC: BaseVC {
     var manager:LoginManager = LoginManager.init()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.userNameField.text = "12755"
-        self.passwordField.text = "542717"
+        self.userNameField.text = "87557"
+        self.passwordField.text = "329203"
        // setupView()
 
         
@@ -77,9 +77,8 @@ class LoginVC: BaseVC {
             }
             else{
                 APP_DELEGATE.hideFullScreenLoadingIndicator()
-//                AlertManager.sharedInstance.showAlert(title: nil, message: "Incorrect Username or Password", vc: self)
-//                print(errorMessage ?? "Login failed")
-                  self.loadAuthenticationVC()
+                AlertManager.sharedInstance.showAlert(title: nil, message: "Incorrect Username or Password", vc: self)
+                print(errorMessage ?? "Login failed")
             }
             
         }
