@@ -76,6 +76,8 @@
 		E995A443209A3A81000EB94A /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A43B209A3A80000EB94A /* Operations.swift */; };
 		E995A444209A3A81000EB94A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A43C209A3A81000EB94A /* Request.swift */; };
 		E995A44A209A3E19000EB94A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A449209A3E19000EB94A /* Constants.swift */; };
+		E997599520B5BFDE00584899 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997599420B5BFDE00584899 /* UserManager.swift */; };
+		E997599820B5D06C00584899 /* ClientInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997599720B5D06C00584899 /* ClientInfoVC.swift */; };
 		E99FC7AF20A8A7C400435A5E /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99FC7AE20A8A7C400435A5E /* AlertManager.swift */; };
 		E9BACCC620B47BEF005C3FDB /* Addons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BACCB020B47BDA005C3FDB /* Addons.swift */; };
 		E9BACCC720B47BEF005C3FDB /* Cancelledinvoicesamount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BACCB120B47BDA005C3FDB /* Cancelledinvoicesamount.swift */; };
@@ -219,6 +221,8 @@
 		E995A43B209A3A80000EB94A /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
 		E995A43C209A3A81000EB94A /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		E995A449209A3E19000EB94A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E997599420B5BFDE00584899 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		E997599720B5D06C00584899 /* ClientInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInfoVC.swift; sourceTree = "<group>"; };
 		E99FC7AE20A8A7C400435A5E /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		E9BACCB020B47BDA005C3FDB /* Addons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addons.swift; sourceTree = "<group>"; };
 		E9BACCB120B47BDA005C3FDB /* Cancelledinvoicesamount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancelledinvoicesamount.swift; sourceTree = "<group>"; };
@@ -458,6 +462,7 @@
 				E9DA8A3A209F0E4900C5080F /* HomeManager.swift */,
 				E98882DA20A0A9E300B0680B /* AuthenticationManager.swift */,
 				E99FC7AE20A8A7C400435A5E /* AlertManager.swift */,
+				E997599420B5BFDE00584899 /* UserManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -555,6 +560,7 @@
 		E995A41F209A28AB000EB94A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E997599620B5D04F00584899 /* ClientInfoVC */,
 				6CD8BEC420A025B7006A8AE0 /* Authentication */,
 				6CC09D56209C231F000671B1 /* DetailsVC */,
 				6CC09D55209C2317000671B1 /* Home */,
@@ -677,6 +683,14 @@
 				E995A449209A3E19000EB94A /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		E997599620B5D04F00584899 /* ClientInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				E997599720B5D06C00584899 /* ClientInfoVC.swift */,
+			);
+			path = ClientInfoVC;
 			sourceTree = "<group>";
 		};
 		E9BACCAF20B47BDA005C3FDB /* ClientInfoModel */ = {
@@ -1061,6 +1075,7 @@
 				E92BA094209B49C60009AAD7 /* MinLengthRule.swift in Sources */,
 				E9CB798920A4AF9000E1B2DF /* Media.swift in Sources */,
 				E92BA08F209B49C60009AAD7 /* FullNameRule.swift in Sources */,
+				E997599520B5BFDE00584899 /* UserManager.swift in Sources */,
 				E98882DB20A0A9E300B0680B /* AuthenticationManager.swift in Sources */,
 				E98882E220A0AE8C00B0680B /* ChannelsResponseModel.swift in Sources */,
 				E995A442209A3A81000EB94A /* ResponseProtocol.swift in Sources */,
@@ -1069,6 +1084,7 @@
 				E92BA083209B499D0009AAD7 /* Validator.swift in Sources */,
 				E995A43F209A3A81000EB94A /* Service.swift in Sources */,
 				E9DA8A4A209F744D00C5080F /* ChannelCell.swift in Sources */,
+				E997599820B5D06C00584899 /* ClientInfoVC.swift in Sources */,
 				E9DA8A41209F122200C5080F /* Categories.swift in Sources */,
 				E92BA090209B49C60009AAD7 /* HexColorRule.swift in Sources */,
 				E9BACCD520B47BEF005C3FDB /* Paidinvoicesamount.swift in Sources */,

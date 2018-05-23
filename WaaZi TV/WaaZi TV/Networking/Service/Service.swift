@@ -38,7 +38,9 @@ public class Service: ServiceProtocol {
 		let op = Promise<ResponseProtocol>(in: request.context ?? .background, token: request.invalidationToken, { (r, rj, s) in
 			// Attempt to create the object to perform request
           //  WTUtils.printToConsole(message: try! request.urlRequest(in: self) as! String)
+            try WTUtils.printToConsole(message: "Request : \(request.urlRequest(in: self))")
 			let dataOperation: DataRequest = try Alamofire.request(request.urlRequest(in: self))
+
 			// Execute operation in Alamofire
 			dataOperation.response(completionHandler: { rData in
 				// Parse response

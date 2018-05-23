@@ -13,9 +13,10 @@ class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
-    var channelCategories:[ChannelCategory]?
+    var filteredCategories:[ChannelCategory]?
     var category:Category?
     var manager:HomeManager = HomeManager.sharedInstance
+    var isSearchActive:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
@@ -35,8 +36,6 @@ class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             }
             else if status == .success{
                 DispatchQueue.main.async {
-                    let channelsResponse = response as! ChannelsResponseModel
-                    self.channelCategories = channelsResponse.categories?.category
                     self.collectionView.isHidden = false
                     self.collectionView.reloadData()
                     APP_DELEGATE.hideFullScreenLoadingIndicator()
@@ -68,25 +67,50 @@ class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if  (self.channelCategories != nil) {
-            return (self.channelCategories?.count)!
+        if isSearchActive{
+            if  (self.filteredCategories != nil) {
+                return (filteredCategories!.count)
+            }
+            else{
+                return 0
+            }
         }
         else{
-            return 0
+            if  (self.manager.channelCategories != nil) {
+                return ( self.manager.channelCategories?.count)!
+            }
+            else{
+                return 0
+            }
         }
+        
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell:CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-         let channelCategory = self.channelCategories?[indexPath.row]
+          let cell:CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        let channelCategory :ChannelCategory?
+        if isSearchActive{
+            channelCategory =  self.filteredCategories?[indexPath.row]
+        }
+        else{
+          channelCategory =  self.manager.channelCategories?[indexPath.row]
+        }
+      
+      
          cell.titleLabel.text = channelCategory?.title
-        cell.thumbNailImageView.sd_setImage(with: URL.init(string: (channelCategory?.hd_image)!), completed: nil)
+        cell.thumbNailImageView.sd_setImage(with: URL.init(string: (channelCategory?.hd_image) ?? ""), completed: nil)
         return cell
 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailsVC:DetailsVC = storyboard?.instantiateViewController(withIdentifier: "DetailsVC") as! DetailsVC
-        let channelCategory = self.channelCategories?[indexPath.row]
+        let channelCategory :ChannelCategory?
+        if isSearchActive{
+            channelCategory =  self.filteredCategories?[indexPath.row]
+        }
+        else{
+            channelCategory =  self.manager.channelCategories?[indexPath.row]
+        }
         detailsVC.selectedChannel = channelCategory
         self.navigationController?.pushViewController(detailsVC, animated: true)
     }
@@ -114,11 +138,13 @@ class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         return 0
     }
     
+    //MARK:- searchbar delegates
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        
+        isSearchActive = false
     }
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        
+        isSearchActive = true
     }
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
         return true
@@ -126,11 +152,24 @@ class HomeVC: BaseVC,UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
        
-        if (searchText.characters.count>2){
-            self.channelCategories = manager.searchChannels(searchText, self.channelCategories!)
-            self.collectionView.reloadData()
+        if (searchText.characters.count>1){
+        
+           self.filteredCategories = manager.searchChannels(searchText)
+            if (filteredCategories?.count)! > 0 {
+                    isSearchActive = true
+            }
+            else{
+                    isSearchActive = false
+            }
             
         }
-        
+        else{
+              isSearchActive = false
+        }
+          self.collectionView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        return true
     }
 }

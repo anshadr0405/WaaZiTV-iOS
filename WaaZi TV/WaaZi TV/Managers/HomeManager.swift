@@ -10,7 +10,8 @@ import Foundation
 class HomeManager:BaseManager{
     static let sharedInstance = HomeManager()
     var LiveTVCategories : [Category]?
-    
+    var channelCategories : [ChannelCategory]?
+
     func getGroupsService(completion:@escaping Completion){
         completion(.loading, nil, nil)
         let params = NetworkUtils.getCommonUrlParams(type: .groups)
@@ -20,12 +21,27 @@ class HomeManager:BaseManager{
         getGroupsService.execute(getGroupsRequest, retry: 2).then( { response in
             let responseDict = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as! [String: Any]
             if let groupsResponseModel = GroupsResposeModel.init(dictionary:responseDict as NSDictionary){
-                self.LiveTVCategories = groupsResponseModel.categories?.category
-                DispatchQueue.main.async {
-                   completion(.success, groupsResponseModel as AnyObject, nil)
-                    
+                
+                if groupsResponseModel.categories != nil{
+                    DispatchQueue.main.async {
+                        self.LiveTVCategories = groupsResponseModel.categories?.category
+                        completion(.success, groupsResponseModel as AnyObject, nil)
+                        
+                    }
                 }
-               
+                else{
+                    let apiResponse = Boxapi.init(dictionary:responseDict as NSDictionary)
+                    if (apiResponse?.result == "error"){
+                        
+                        DispatchQueue.main.async {
+                            completion(.error, nil, apiResponse?.message)
+                            
+                        }
+                    }
+                }
+                
+
+    
             }
             else{
                 let apiResponse = Boxapi.init(dictionary:responseDict as NSDictionary)
@@ -69,6 +85,7 @@ class HomeManager:BaseManager{
             if let channelsResponseModel = ChannelsResponseModel.init(dictionary:responseDict as NSDictionary){
                 
                 DispatchQueue.main.async {
+                     self.channelCategories = channelsResponseModel.categories?.category
                     completion(.success, channelsResponseModel as AnyObject, nil)
                 }
                 
@@ -138,16 +155,34 @@ class HomeManager:BaseManager{
             
         })
     }
+   
     
-    func searchChannels(_ searchKey:String,_ items:[ChannelCategory]) -> [ChannelCategory] {
+    func searchItems(_ searchKey:String,items: Array<Item>) ->  Array<Item> {
+        
+        var filteredItems = Array<Item>()
+        if searchKey.characters.count > 0 {
+            
+            
+            filteredItems = (items.filter {
+                return ($0.title?.localizedCaseInsensitiveContains(searchKey))!
+            })
+        }
+        return filteredItems
+        
+        
+    }
+    func searchChannels(_ searchKey:String) -> [ChannelCategory] {
         
         var filteredItems = [ChannelCategory]()
         if searchKey.characters.count > 0 {
-            //let searchPredicate: NSPredicate = NSPredicate(format: "title contains[cd] %@ || program_name contains[cd] %@" , searchKey, searchKey)
-            filteredItems =  items.filter {($0.title?.contains(searchKey))! }
 
+        
+            filteredItems = (self.channelCategories?.filter {
+                return ($0.title?.localizedCaseInsensitiveContains(searchKey))!
+                })!
         }
         return filteredItems
-    }
+    
 
+}
 }
