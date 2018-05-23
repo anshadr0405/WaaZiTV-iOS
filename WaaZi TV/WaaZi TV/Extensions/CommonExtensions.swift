@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MediaPlayer
 public extension UIColor{
     public static func getAppThemeColor()->UIColor{
         return UIColor.init(red: 255.0/255.0, green: 87.0/255.0, blue: 34.0/255.0, alpha: 1)
@@ -49,6 +50,54 @@ class NibView: UIView {
         
         // Setup view from .xib file
         xibSetup()
+    }
+}
+
+extension CGAffineTransform {
+    
+    static let ninetyDegreeRotation = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
+}
+
+extension VideoPlayerView{
+    
+    var fullScreenAnimationDuration: TimeInterval {
+        return 0.15
+    }
+    
+    func minimizeToFrame(_ frame: CGRect) {
+        UIView.animate(withDuration: fullScreenAnimationDuration) {
+        //    self.transform(.identity)
+        
+            self.frame = frame
+        }
+    }
+    
+    func goFullscreen() {
+        UIView.animate(withDuration: fullScreenAnimationDuration) {
+          //  self.transform(.ninetyDegreeRotation)
+            self.frame = UIScreen.main.bounds
+        }
+    }
+}
+
+extension AVPlayerLayer {
+    
+    var fullScreenAnimationDuration: TimeInterval {
+        return 0.15
+    }
+    
+    func minimizeToFrame(_ frame: CGRect) {
+        UIView.animate(withDuration: fullScreenAnimationDuration) {
+            self.setAffineTransform(.identity)
+            self.frame = frame
+        }
+    }
+    
+    func goFullscreen() {
+        UIView.animate(withDuration: fullScreenAnimationDuration) {
+            self.setAffineTransform(.ninetyDegreeRotation)
+            self.frame = UIScreen.main.bounds
+        }
     }
 }
 private extension NibView {

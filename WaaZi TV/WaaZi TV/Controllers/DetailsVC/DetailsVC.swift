@@ -18,7 +18,7 @@ class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICo
     var selectedChannel:ChannelCategory?
     var isSearchActive:Bool = false
     var filteredCategories:Array<Item>?
-
+      fileprivate var originalPlayerFrame = CGRect.zero
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupViews()
@@ -85,14 +85,14 @@ class DetailsVC: BaseVC,UICollectionViewDataSource,UICollectionViewDelegate,UICo
     }
     
     func fullScreenButtonClicked() {
-//        videoPlayerView?.frame = self.view.frame
-//        self.view.layoutSubviews()
-
-        
-    let value = UIInterfaceOrientation.landscapeRight.rawValue
-       UIDevice.current.setValue(value, forKey: "orientation")
-        videoPlayerView?.layoutIfNeeded()
-        self.playerView.layoutSubviews()
+//        self.originalPlayerFrame = self.playerView.frame
+//        self.videoPlayerView?.goFullscreen()
+//        self.videoPlayerView?.videoPlayerLayer.goFullscreen()
+//      
+////    let value = UIInterfaceOrientation.landscapeRight.rawValue
+////       UIDevice.current.setValue(value, forKey: "orientation")
+////        videoPlayerView?.layoutIfNeeded()
+////        self.playerView.layoutSubviews()
     }
     func setupCollectionView() {
         collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
